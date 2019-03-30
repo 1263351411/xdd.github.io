@@ -1,0 +1,144 @@
+# Python基本知识点
+* 注释：--------#标注的文本
+* 数字
+		*  整形，不区分long和int  
+		&nbsp;&nbsp;&nbsp;&nbsp;进制0xa（十六精制），0o10(八进制)，0b10(二进制数)
+		&nbsp;&nbsp;&nbsp;&nbsp;bool,2个值True、False
+		*浮点数
+		&nbsp;&nbsp;&nbsp;&nbsp;1.2，3.145、-0.12、1.46e9等价于1.46\*$10^{9}$
+		* 复数，1+2j
+				
+
+例如：定义一个整数
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190323192723564.png)
+* 字符串
+	* 使用 单引号【'】，双引号【"】引用的字符序列
+	* 【'''】和【"""】单双三引号，可以跨行、可以在其中自由的使用单双引号
+	*  在字符串前面加上r或R前缀，表示该字符串不做特殊的处理
+	*  3.6版本开始，新增f前缀,格式化字符串
+例如：声明一个字符串
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190323193816979.png)
+#### 基本语法  
+* 转译序列【\\\\】【\\t】【\\n】【\\"】 
+			前缀r，例如````a = r'abcd' ````吧里面的所有支付当普通字符对待
+	* 缩进
+		python中，使用缩进的方式表示层次关系，约定使用4个空格为一个缩进
+	* 续航
+		在行尾使用\,如果使用了括号，则括号内是一个整体，内部跨行不用\
+* 标识符
+	只能是字母，下划线和数字，只能以字母或下划线开头，不能用python的关键字，例如def,class就不能作为标识符。
+	注意：python是对大小写敏感的 
+* 常量
+	一旦赋值就不能改变值的标识符，python中无法定义常量
+* 字面常量
+	一个单独的量，例如‘12’，‘abcd’等
+* 变量
+	赋值后，可以改变值的标识符
+#### Python的语言类型
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190323202307767.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+* python是动态语言、强类型。
+	* 动态语言：指的是变量是否需要指定类型
+	* 强类型语言：指定的是不同类型变量转换之间是否需要强类型转换
+	
+#### 运算符Operator
+* 算数运算符
+	* \+ ，\- ，\*， \/	加，减，乘，取整
+	* %取模
+	* **次方
+注意：在python2.0里面【\/】与【//】意义一样都是整除。如果除数和被除数都是正数，得到的结果都是整数。而再python3.0里面【//】为整除，而【\/】为自然除法。
+例如：
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2019032516034482.png)
+* 位运算符号
+	* 【&】与运算，特点，
+			 0 & 1 = 0,
+			 1 & 1 = 1，
+			 1 & 0 = 0，
+			 0 & 0 = 0
+	* 【|】或运算（**规律：一个数（0和1）与1做或运算等于他本身（0和1）**）
+			0 | 1 = 1
+			1 | 1 = 1
+			1 | 0 = 1
+			0 | 0 = 0
+	* 【~】按位取反运算符。
+	* 【^】异或运算符，**按位做异或运算，相同得0，不同得1**
+			1 ^ 1 = 0
+			1 ^ 0 = 1
+			0 ^ 1 = 1
+			0 ^ 0 = 0
+	* 【<<】左移动运算(相当于乘以2的多少次方)
+		例如：8<<3 等价于8*$2^{3}$  
+		
+		![在这里插入图片描述](https://img-blog.csdnimg.cn/20190325161935407.png)
+	* 【>>】右移运算(相当于除以2的多少次方)
+			例如：32>> 3 =4相当于32除以$2^{3}$(取整)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190325165449242.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190323220113457.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70) 
+**注意：补码的补码就是原码(可以推理)**
+#### 运算符的优先级
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324172134976.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+#### 表达式
+*	表达式由数字、符号、括号、变量等的组合  
+
+**表达式分为：**
+		* 算数表达式	
+		*  逻辑表达式: 	 
+		*  赋值表达式：例如：a = 100
+注意：在Python中，赋值即定义，如果一个变量已经定义，赋值相当于重新定义(即**赋值及定义**)
+
+#### Python中的内存管理
+1. 变量无需事先声明，也不需要指定类型。(动态语言的特性)
+2. Python编程中一般无须关心变量的存亡，一般也不用关心内存的管理
+3. Python使用引用计数器记录所有对象的引用数  
+		* 当对象引用数变 为0，它就可以被垃圾回收GC
+		* 计数增加：
+				&nbsp;&nbsp;&nbsp;&nbsp;* 赋值给其他变量就增加引用计数，例如：x = 3; y = x; z=[x,1]
+				&nbsp;&nbsp;&nbsp;&nbsp;* 实参传参，如foo(y)
+		* 计数减少：
+				&nbsp;&nbsp;&nbsp;&nbsp;* 函数运行结束时，局部变量就会被自动撤销，对象引用计数减少
+				&nbsp;&nbsp;&nbsp;&nbsp; * 变量被赋值给其他对象。例如：x = 3; y=x; x=4
+		* 有关性能的时候，就需要考虑变量的引用问题，但是该释放内存，还是尽量不释放内存，看需求。
+**总结：垃圾回收GC，会清理内存中引用数为0的对象。将内存调整出连续长片的内存**  
+#### Python中的程序控制
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324185850682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)  
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324192229470.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70) 
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324194358123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+**【if语句使用简单示例】**
+````python
+gdy = 3 
+if gdy == 1 :
+    print("gdy={}".format(gdy))
+elif gdy == 2 :
+    print(f"gdy = {gdy}")
+else:
+    print("gdy = ",gdy)
+````
+常见的数据类型都可以进行bool值转换，默认情况如下
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324191803583.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+#### 循环
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324194756870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+##### while循环简单示例：打印10到0之间的数
+````python
+i = 10
+while i : 
+    print( f"i = {i}" ) 
+    i -= 1
+print("打印完毕");
+````
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324200407302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+##### for循环简单示例
+````python
+#输出10以内的偶数，不包含10
+for i in range(10) :
+    if i>>1<<1 == i :
+        print(i)
+#或者如下
+for i in range(10):
+    if i & 1 == 0:
+        print(i)
+````
+
+* 循环中的break语句和continue
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324210934800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324211337458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324211546635.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
