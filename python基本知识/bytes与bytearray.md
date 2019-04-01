@@ -60,7 +60,18 @@
         ![byts示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes03.jpg) 
 
     * bytes(string,encoding[,errors])-->bytes等价于string.encode(),将string字符集按照指定的编码表解码成对应的bytes集合。
-    * bytes(bytes_or_buffer)-->immutable copy of bytes_or_buffer从一个字节序列或者buffer复制出一个新的不可变的bytes对象
+    * bytes(bytes_or_buffer)-->immutable copy of bytes_or_buffer从一个字节序列或者buffer复制出一个新的不可变的bytes对象  
+        * 注意：当copy的序列中是python的常量时，在python底层不会真的去拷贝一份常量，只是增加常量的引用次数.因为bytes字节数组是不可变的。
+            * python
+        * 例如：
+            ````python
+            s = "年第三".encode()
+            s1 = bytes(s)
+            print(s,s1)
+            print(id(s),id(s1))
+            ````  
+
+            ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes10.jpg)   
     * 使用b前缀定义：
         * 例如：var = b"abc9"【只允许使用基本的ASCII使用字符形式定义】或者 var = b"\x41\x61"【使用16精制表示】 
 2. bytes的操作  
@@ -93,7 +104,19 @@
     * bytearray(int)    #定义一个指定长度的bytearray的字节数组，默认被\x00填充
     * bytearray(iterable_of_ints)   #根据[0,255]的int组成的可迭代对象创建bytearray
     * bytearray(string,encoding[,errors])-->bytearray  #根据string类型创建bytearray，和string.encode()类似，不过返回的是可变对象
-    * bytearray(bytes_or_buffe)从一个字节序列或者buffer复制出一个新的可变bytearray对象
+    * bytearray(bytes_or_buffe)从一个字节序列或者buffer复制出一个新的可变bytearray对象,和bytes不同，他会复制一个新的对象。
+        * 例如：
+        ````python
+        s = 'abcd'
+        s1 = s.encode()  #将字符集按照utf-8编码成字字节数组
+        s2 = bytes(s1)  #根据s1字节数组拷贝一个新的字节数组
+        s3 = bytearray(s2)
+        s4 = bytearray(s3) 
+        print(s1,s2,s3,s4,sep = "\t\t")
+        print(id(s1),id(s2),id(s3),id(s4),sep = "\t\t")
+        ````  
+
+        ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes11.jpg)
 * bytearray操作
     * append(int) 尾部追加一个元素
     * insert(index,int)在指定索引位置插入元素
@@ -111,10 +134,10 @@
         * 小端模式(tittle):低字节如果放在低地址上，称为小端模式
 * int.to_bytes(length,byteorder) #将一个整数表达成指定长度的字节数组
 * 大小端图解  
-![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes06.jpg)  
+![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes06.jpg)   
 ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes07.jpg)  
 
-* 示例1：  
+* 示例1：   
 ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes08.jpg)   
 * 示例2： 
 ````python
@@ -124,5 +147,6 @@ a2 = int.from_bytes(a1,"big")  #将字节数组，用int数组表示法，使用
 a3 = a2.to_bytes(3,"big")  #将a2转换成字节数组，需要指定int类型的a2表示了几个字节，使用了什么模式
 a4 = a3.decode()  #将字节数组解码，默认解码方式是utf-8
 print("a = {}\na1 = {}\na2 = {}\na3 = {}\na4 = {}".format(a,a1,a2,a3,a4))
-````  
+````    
+
 ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes09.jpg) 
