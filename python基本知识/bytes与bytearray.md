@@ -49,7 +49,7 @@
     * bytes(int) #指定字节的bytes,被\x00填充 
         * 例如：bytes(15)表示定义一个长度为15的字节组成的数组
     * bytes(iterable_of_ints) -->bytes[0,255]的int组成的可迭代对象  
-        例如：  
+        * 例如：  
         ````python
         arr = [61,62,63]
         arr2 = bytes(arr)  # 根据int类型列表转换成对应的字节列表,注意列表中int类型的值取值范围是【0-255】
@@ -62,7 +62,6 @@
     * bytes(string,encoding[,errors])-->bytes等价于string.encode(),将string字符集按照指定的编码表解码成对应的bytes集合。
     * bytes(bytes_or_buffer)-->immutable copy of bytes_or_buffer从一个字节序列或者buffer复制出一个新的不可变的bytes对象  
         * 注意：当copy的序列中是python的常量时，在python底层不会真的去拷贝一份常量，只是增加常量的引用次数.因为bytes字节数组是不可变的。
-            * python
         * 例如：
             ````python
             s = "年第三".encode()
@@ -71,7 +70,8 @@
             print(id(s),id(s1))
             ````  
 
-            ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes10.jpg)   
+            ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes10.jpg)    
+    
     * 使用b前缀定义：
         * 例如：var = b"abc9"【只允许使用基本的ASCII使用字符形式定义】或者 var = b"\x41\x61"【使用16精制表示】 
 2. bytes的操作  
