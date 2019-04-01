@@ -22,7 +22,7 @@
         d = c.decode()  #将变量c的字节数组解码成对应的字符串
         print(a,c,d,sep="\t")
         ````
-        ![encode and decode](../img/bytes02.jpg) 
+        ![encode and decode](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes02.jpg) 
     * 示例 2：  encode()指定编码集
         ````python
         a = '你好'
@@ -32,7 +32,7 @@
         a12 = a1.decode(encoding = "gbk")
         print("a = {}\na1 = {}\na2 = {}\na11 = {}\na12 = {}".format(a,a1,a2,a11,a12))
         ````
-        ![encode and decode for encoding](../img/bytes05.jpg)   
+        ![encode and decode for encoding](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes05.jpg)   
 
 * 常用ASCII数字对应的字符：  
     * 【\t】-->9   
@@ -42,7 +42,7 @@
     * [A-Z]-->[65-90]   在ASCII表中A对应的16进制表示法是41
     * [a-z]-->[97-122]  在ASCII表中a对应的16进制表示法是61
 ### ASCII表
-![Ascii表](../img/ASCII表.jpg)
+![Ascii表](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/ASCII表.jpg)
 ### bytes
 1. bytes定义  【注意一个字节是8位，而bytes是字节数组】
     * bytes() #定义一个空的bytes
@@ -57,7 +57,7 @@
         arr4 = arr2.hex() #将字节列表，转换成对应的16进制字符串
         print("arr = {}\narr2 = {}\narr3 = {}\narr4 = {}".format(arr,arr2,arr3,arr4))
         ````    
-        ![byts示例](../img/bytes03.jpg) 
+        ![byts示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes03.jpg) 
 
     * bytes(string,encoding[,errors])-->bytes等价于string.encode(),将string字符集按照指定的编码表解码成对应的bytes集合。
     * bytes(bytes_or_buffer)-->immutable copy of bytes_or_buffer从一个字节序列或者buffer复制出一个新的不可变的bytes对象
@@ -70,7 +70,7 @@
         * b'abcdef'.replace(b'f',b'k')将字节【abcdef】中的【f】替换成【k】 
     * find(bytes) 寻找指定字符，找到返回对应索引，找不到返回-1
         * 例如：  
-        ![find示例](../img/bytes01.jpg)   
+        ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes01.jpg)   
     * decode()  #将字节序列转换成字符序列
     * bytes.fromhex(string)  类方法 #默认是两个字符表示一个16进制的数字转换成一个字符 
         * 注意：stirng必须是两个字符的16进制的形式，字符串中的空格将会被忽略
@@ -84,7 +84,7 @@
         num3 = list(num1) #将字节转换成对应的10进制数，存放在新列表中
         print("num1 = {}\n num2 = {} \n num3 = {}".format(num1,num2,num3))
         ````  
-        ![find示例](../img/bytes04.jpg)  
+        ![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes04.jpg)  
     * 索引
         b'abcdef'[2]返回该字节对应的数，int类型  
 ### bytearray 【可变的字节数组】
@@ -111,11 +111,11 @@
         * 小端模式(tittle):低字节如果放在低地址上，称为小端模式
 * int.to_bytes(length,byteorder) #将一个整数表达成指定长度的字节数组
 * 大小端图解  
-![find示例](../img/bytes06.jpg)  
-![find示例](../img/bytes07.jpg)  
+![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes06.jpg)  
+![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes07.jpg)  
 
 * 示例1：  
-![find示例](../img/bytes08.jpg)   
+![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes08.jpg)   
 * 示例2： 
 ````python
 a = "abc"
@@ -125,4 +125,4 @@ a3 = a2.to_bytes(3,"big")  #将a2转换成字节数组，需要指定int类型�
 a4 = a3.decode()  #将字节数组解码，默认解码方式是utf-8
 print("a = {}\na1 = {}\na2 = {}\na3 = {}\na4 = {}".format(a,a1,a2,a3,a4))
 ````  
-![find示例](../img/bytes09.jpg) 
+![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes09.jpg) 
