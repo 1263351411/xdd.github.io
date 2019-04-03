@@ -1,4 +1,4 @@
-# set 和hash
+# set和集合运算
 ### set集合   
 * 概念：set是可变的、无序的、不重复的元素集合。set的元素及元素里面的元素不能出现不可哈希类型。（即set的元素要求必须可以hash）
     * 常用的不可hash类型有list、set、bytearray
@@ -19,7 +19,7 @@
     * 因为set集合存储元素是先根据元素求出对应的hash值，然后放在对应hash值的内存编号中。所以删除或修改元素。只需要根据元素求出其对应的hash值后找到对应位置做操作。正是这样的结构设计保证了set内元素是不能重复的。也保证了set集合中添加和删除元素的效率是$O(1)$
     * list是线性结构。在用索引查找时在内存中可以直接偏移就找到对应的索引位置，所以list使用索引非常快，而正是因为这样。在添加和删除元素时，会发生其他不必要的元素移动。所有list查找，删除，添加元素。相对于set集合比较慢。
     * 例如：  
-    ![set001](../img/set001.jpg)  
+    ![set001](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/set001.jpg)  
 * 常用的可hash类型
     * 数值类型 int、float、complex
     * 布尔型 True、False
@@ -66,7 +66,7 @@ b = set("adef")
 c = a|b
 print(a,d,c,sep="\n")
 ````  
-![set002](../img/set002.jpg)  
+![set002](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/set002.jpg)  
 * 交集运算
 ````python  
 a = set("abccd")
@@ -74,7 +74,7 @@ b = set("adef")
 c = a&b
 print(a,d,c,sep="\n")
 ````  
-![set003](../img/set003.jpg)
+![set003](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/set003.jpg)
 * 差集运算
 ````python
 a = set("abccd")
@@ -82,7 +82,7 @@ b = set("adef")
 c = a - b
 print(a,d,c,sep="\n")
 ````  
-![set004](../img/set004.jpg)  
+![set004](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/set004.jpg)  
 
 * 对称差集运算
 ````python
@@ -91,4 +91,4 @@ b = set("adef")
 c = a ^ b
 print(a,d,c,sep="\n")
 ````  
-![set005](../img/set005.jpg)
+![set005](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/set005.jpg)
