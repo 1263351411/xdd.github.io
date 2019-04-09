@@ -76,6 +76,7 @@
 * 【pop(key[,default])】 将key对应的值删除，并返回key对应的值。如果key不存在就返回缺省值defalut。如果未设置default，并且key不存在会抛出异常keyError
 * 【popitem()】移除并返回任意的键值对，字典为empty空时会抛出异常KeyError
 * 【clear()】清空字典
+* 【del d[key]】 删除指定key的键值对
 * 相关参数 del语句
     * 例如【del a['c']】看着像删除了一个对象，本质上减少了一个对象的引用，del实际上删除的是名称，而不是对象。
     ````python
@@ -106,6 +107,11 @@
     ![dict008](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/dict008.jpg)   
 ## 总结
 * python3中 keys、values、items方法返回一个类似生成器的可迭代对象，不会吧函数的返回结果复制到内存中，返回的对象可以使用len()、iter()、in操作
+    * 返回Dictionary view对象，可以使用len()、iter()、in操作
+    * 字典的entry的动态视图，字典变化，视图将反映出这些变化
+    * keys返回一个类set对象，也就是可以看做一个set集合
+    * 如果values都可以hash，那么items也可以看做是类set对象
+* python2中上述方法返回的是一个新列表,占用新的内存空间。所以Python2建议使用iterkeys、itervalues、iteritems版本，返回一个迭代器，而不是返回一个copy
 ## 相关字典
 #### 缺省字典（defaultdict）
 * 需要导入模块import collections
