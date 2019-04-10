@@ -8,7 +8,7 @@
 6. [dict字典](python基本知识/dict字典.md) 
 7. [解析式和生成器](python基本知识/解析式和生成器.md)
 8. [datetime时间模块的使用](python基本知识/datetime时间模块的使用.md)  
-9. [内建函数和可迭代对象](python基本知识/内建函数和可迭代对象.md) 
+9. [内建函数和可迭代对象，迭代器](python基本知识/内建函数和可迭代对象.md) 
 # python经典算法
 1. [汉诺塔问题](python经典算法/汉诺塔问题.md)
 
