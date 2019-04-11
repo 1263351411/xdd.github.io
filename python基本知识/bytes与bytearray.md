@@ -148,5 +148,13 @@ a3 = a2.to_bytes(3,"big")  #将a2转换成字节数组，需要指定int类型�
 a4 = a3.decode()  #将字节数组解码，默认解码方式是utf-8
 print("a = {}\na1 = {}\na2 = {}\na3 = {}\na4 = {}".format(a,a1,a2,a3,a4))
 ````    
+![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes09.jpg)   
 
-![find示例](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes09.jpg) 
+* 示例3，同一个字的不通编码
+````python
+"啊".encode() # 编码 --->返回bytes encode(）默认编码方式是utf-8
+"啊".encode(encoding='gbk') # 编码，指定编码方式为gbk
+ord("啊")  #解码（返回是10进制整数），获取“啊”的编码。由于python的默认编码时unicode所有获取的是对应unicode编码表的编码
+hex(21834) #将21834转换成16精制数
+````  
+![bytes12](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/bytes12.jpg) 
