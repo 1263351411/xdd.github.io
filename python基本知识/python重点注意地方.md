@@ -17,4 +17,9 @@ x()
 x()
 print(x.__defaults__)
 ````  
-![fun003](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/fun003.jpg)
+![fun003](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/fun003.jpg) 
+
+####例子二：切片
+````python
+arr = [1,2,3,4]
+````
