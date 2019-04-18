@@ -15,6 +15,9 @@
 11. [匿名函数](python基本知识/匿名函数.md)
 12. [生成器函数和yield from语法](python基本知识/生成器函数和yield与from.md)
 13. [递归](python基本知识/递归.md)
+# Python数据结构
+1. [树](Python数据结构/树.md)
+2. [图](Python数据结构/图.md)
 # python经典算法
 1. [汉诺塔问题](python经典算法/汉诺塔问题.md)
 2. [十大排序算法](python经典算法/十大排序算法.md)
