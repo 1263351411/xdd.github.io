@@ -14,7 +14,8 @@
 10. [函数](python基本知识/函数.md)
 11. [匿名函数](python基本知识/匿名函数.md)
 12. [生成器函数和yield from语法](python基本知识/生成器函数和yield与from.md)
-13. [递归](python基本知识/递归.md)
+13. [高阶函数](python基本知识/高阶函数.md)
+14. [递归](python基本知识/递归.md)
 # Python数据结构
 1. [树的概念和基本性质](Python数据结构/树的概念和基本性质.md)
 2. [图](Python数据结构/图.md)
