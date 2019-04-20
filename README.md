@@ -16,6 +16,8 @@
 12. [生成器函数和yield from语法](python基本知识/生成器函数和yield与from.md)
 13. [高阶函数与函数的柯里化](python基本知识/高阶函数与函数的柯里化.md)
 14. [递归](python基本知识/递归.md)
+## Python高级知识
+1. [装饰器](python高级知识/装饰器.md)
 ## Python数据结构
 1. [树的概念和基本性质](Python数据结构/树的概念和基本性质.md)
 2. [图](Python数据结构/图.md)
