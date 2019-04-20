@@ -39,6 +39,34 @@
     print([cunt() for _ in range(5)])  #根据计数器函数，获取5个值放在list中
     ````  
     ![yield002](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/yield002.jpg)  
+    3. **例子3：生成器中的闭包**
+    ````python
+    def getcont():
+        key = 5
+        hh = (key+i for i in range(4))
+        key = 100  #注意此时生成器中的key对应的值会变成100
+        return hh
+    hh = getcont()  ## 注意此时生成器中key对应的值变成100，形成闭包。
+    key = 120 #此时key与hh中生成器的key不同
+    list(hh)
+    ````  
+    ![yield005](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/yield005.jpg)  
+    4. **特殊例子4**注意：  
+    ````python
+    def add(n,i):
+        return n+i
+
+    def test():   #生成器函数值为【0,1,2,3,】
+        for i in range(4):
+            yield i
+
+    g=test()
+    for n in [1,10]:
+        g=(add(n,i) for i in g)   #定义生成器，其中生成器中n为标识符。注意：n为标识符，当循环执行完成后，局部变量中n的值为10
+    #     g = (add(n,i) for i in (add(n,i) for i in g) )
+    print(list(g))
+    ````
+    ![yield004](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/yield004.jpg)  
 
 * 注意：
 1. 生成器函数中，可以多次使用yield,每次执行一个车yield会暂停执行，把yield表达式的值返回
