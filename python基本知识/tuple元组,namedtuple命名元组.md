@@ -1,4 +1,4 @@
-## tuple元组,命名元组namedtuple
+## tuple元组,namedtuple命名元组
 #### 元组的定义和初始化
 * 定义：由一个有序的元素组成的集合。元组是**不可变**对象
     * tuple()->empty tuple 返回一个空元组

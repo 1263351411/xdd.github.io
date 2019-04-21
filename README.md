@@ -3,7 +3,7 @@
 1. [python重点注意地方](python基本知识/python重点注意地方.md)  
 ## python基础知识  
 * 线性数据结构
-    1. [tuple元组,命名元组namedtuple](python基本知识/tuple元组,命名元组namedtuple.md)
+    1. [tuple元组,namedtuple命名元组](python基本知识/tuple元组,namedtuple命名元组.md)
     2. [list列表](python基本知识/list列表.md)
     3. [str字符串](python基本知识/str字符串.md)
     4. [bytes与bytearray](python基本知识/bytes与bytearray.md)   
