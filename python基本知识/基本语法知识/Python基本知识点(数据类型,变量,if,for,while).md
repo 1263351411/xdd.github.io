@@ -1,4 +1,4 @@
-# Python基本知识点
+# Python基本知识点(数据类型,变量,if,for,while)
 * 注释：--------#标注的文本
 * 数字
 		*  整形，不区分long和int  
@@ -9,7 +9,7 @@
 		* 复数，1+2j
 				
 
-例如：定义一个整数
+例如：定义一个整数  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190323192723564.png)
 * 字符串
 	* 使用 单引号【'】，双引号【"】引用的字符序列
@@ -69,8 +69,8 @@
 		例如：8<<3 等价于8*$2^{3}$  
 		
 		![在这里插入图片描述](https://img-blog.csdnimg.cn/20190325161935407.png)
-	* 【>>】右移运算(相当于除以2的多少次方)
-			例如：32>> 3 =4相当于32除以$2^{3}$(取整)
+	* 【>>】右移运算(相当于除以2的多少次方)  
+			例如：32>> 3 =4相当于32除以$2^{3}$(取整)  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190325165449242.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190323220113457.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70) 
 **注意：补码的补码就是原码(可以推理)**
@@ -112,19 +112,18 @@ elif gdy == 2 :
 else:
     print("gdy = ",gdy)
 ````
-常见的数据类型都可以进行bool值转换，默认情况如下
+常见的数据类型都可以进行bool值转换，默认情况如下  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324191803583.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
 #### 循环
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324194756870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
-##### while循环简单示例：打印10到0之间的数
+##### while循环简单示例：打印10到0之间的数  
 ````python
 i = 10
 while i : 
     print( f"i = {i}" ) 
     i -= 1
 print("打印完毕");
-````
-
+````  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324200407302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
 ##### for循环简单示例
 ````python
@@ -136,9 +135,8 @@ for i in range(10) :
 for i in range(10):
     if i & 1 == 0:
         print(i)
-````
-
-* 循环中的break语句和continue
+````  
+* 循环中的break语句和continue  
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324210934800.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324211337458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190324211546635.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMwMDg3OTU=,size_16,color_FFFFFF,t_70)
