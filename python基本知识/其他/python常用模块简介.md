@@ -1,5 +1,5 @@
 ## python常用模块简介
-#### functools模块
+### functools模块
 * update_wrapper #修改装饰函数的属性
     * 原码如下：
     ````python
@@ -62,8 +62,26 @@
         newfunc.args = args #新增一个属性，记录位置参数
         newfunc.keywords = keywords  #新增一个属性记录关键字参数
         return newfunc #返回内建函数。
-    ````
-#### inspect模块
+    ```` 
+###### functools模块经典应用
+* 函数运行时长统计
+````python
+def gdy_time(fn):
+    """
+    时间统计，统计函数执行时间
+    :param fn: 需要装饰的函数
+    :return: 包装后的fn
+    """
+    @functools.wraps(fn)
+    def wrapper(*args,**kwargs):
+        start = datetime.datetime.now()
+        req = fn(*args,**kwargs)
+        timeout = datetime.datetime.now() - start
+        gdy_print("{}方法耗时：{}，args={},kwargs={},\n执行结果：req={}".format(fn.__name__,timeout.total_seconds(),args,kwargs,req))
+        return req
+    return wrapper
+````
+### inspect模块
 * signature(callable)-><class 'inspect.Signature'> 获取签名(函数签名包含了一个函数的信息，包括函数名，它的产生类型、它所在的类和名称空间及其他信息)
     * 签名返回类型为inspect.Signature类型
         * parameters属性，记录了函数中定义是注解和参数。parameters实际上是一个字典。
@@ -86,7 +104,7 @@
     print(sig.parameters['kwargs'])
     print(sig.parameters['kwargs'].annotation)
     ````  
-    ![module0001](../img/python/module0001.jpg)  
+    ![module0001](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/module0001.jpg)  
 * isfunction(name)-> True|False #是否是函数
 * ismethod(name)-> True|False #是否是类方法
 * isgenerator(name)-> True|False #是否是生成器对象
@@ -105,4 +123,33 @@
         * POSITIONAL_OR_KEYWORD,值可以作为关键字或者位置参数提供
         * VAR_POSITIONAL,可变位置参数，对应*args
         * KEYWORD_ONLY,keyword-only参数，对应* 或者 *args之后出现的费可变关键字参数
-        * VAR_KEYWORD,可变关键字参数，对应**kwargs
+        * VAR_KEYWORD,可变关键字参数，对应**kwargs   
+###### inspect模块经典应用
+* 参数检查
+````python
+def gdy_paramCheck(fn):
+    """
+        参数检查
+    :param fn:  需要检查的函数
+    :return: 包装后的fn
+    """
+    @functools.wraps(fn)
+    def _gdy_paramCheck(*args,**kwargs):
+        params = inspect.signature(fn).parameters #对函数签名，获取参数注解字典
+        for ag,(k,v) in zip(args,params.items()): ##检查位置参数
+            v:inspect.Parameter = v #利用参数注解，告诉编译器v是Parameter类型。本行可以删除，只是帮助编译器给出提示
+            # print(k=="args")
+            if k == "args": break #如果碰到args收集多个位置参数，就直接跳出循环。
+            if v.annotation != inspect._empty and not isinstance(ag,v.annotation):
+                # raise TypeError(""{}={},参数类型错误！错误类型：{}，类型应为：{}".format(k,ag,type(ag),v.annotation))
+                print("{}={},参数类型错误！错误类型：{}，类型应为：{}".format(k,ag,type(ag),v.annotation))
+                return
+        for k,v in kwargs.items():
+            key:inspect.Parameter = params[k] #利用参数注解，告诉编译器key是Parameter类型。本行可以删除，只是帮助编辑器能给出提示
+            if key.empty != key.annotation and not isinstance(v,key.annotation):
+                # raise TypeError("{}={},参数错误！错误类型：{}类型应为：{}".format(k,v, type(v),key.annotation))
+                print("{}={},参数错误！错误类型：{}类型应为：{}".format(k,v, type(v),key.annotation))
+                return
+        return fn(*args,**kwargs)
+    return _gdy_paramCheck
+````
