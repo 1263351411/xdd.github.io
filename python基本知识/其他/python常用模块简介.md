@@ -63,6 +63,38 @@
         newfunc.keywords = keywords  #新增一个属性记录关键字参数
         return newfunc #返回内建函数。
     ```` 
+    * partial例子代码：
+    ````python
+    import functools,inspect
+    def add(x,y)->int:
+        return x+y
+    newadd = functools.partial(add,y=3)
+    print(newadd(5))
+    print(newadd(5,y=9))
+    print(newadd(y=8,x=7))
+    print(inspect.signature(newadd))
+    ````   
+    ![module0002](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/module0002.jpg)   
+* lru_cache(maxsize=128,typed=False) #是个装饰器，为函数生成缓存机制
+    * Least-recently-used装饰器，lru最近最少使用。cache缓存
+    * 如果maxsize设置为None,则禁用LRU功能，并且缓存可以无限制增长。当maxsize是二的次幂时，LRU功能执行得最好
+    * 如果typed设置为True,则不同类型的函数参数将单独缓存。例如：f(3)和f(3.0)将被视为具有不同结果的不同调用。其原理是内部记录的每个参数的类型，计算根据参数字符串+参数类型计算hash值。
+    * lru_cache装饰器使用前提
+        * 同样的函数参数一定得到相同的结果
+        * 函数执行时长很长，且要多次执行
+    * lru_cache本质上是用一个字典记录了函数调用参数组成的字符串做key，和计算的值做value，如果下次调用发现参数一直，就直接从字典中取出对应的值返回。避免重复计算
+    * 缺点：
+        * 不支持缓存过期，key无法过期、失效
+        * 不支持清除操作
+        * 不支持分布式，是一个单机的缓存
+    * 使用场景，单机上需要空间换时间的地方，可以用缓存来将计算变成快速查询
+    * 简单示例：用公式求斐波拉系数列。使用缓存
+    ````python
+    import functools
+    @functools.lru_cache(maxsize=50)
+    def getnum(n):
+        return  1 if n<3 else getnum(n-1)+getnum(n-2)
+    ````
 ###### functools模块经典应用
 * 函数运行时长统计
 ````python
