@@ -37,6 +37,7 @@
 ## python经典算法
 1. [汉诺塔问题](python经典算法/汉诺塔问题.md)
 2. [十大排序算法](python经典算法/十大排序算法.md)
+3. [base64编码和解码](python经典算法/base64编码和解码.md)
 
 # java  
 ## java基础知识  
