@@ -25,6 +25,8 @@
     * strftime(format) --->string,将datetime对象转换成指定格式的时间字符串
         例如：
         ````python
+        #获取当前日期是这年中的第几天：
+        datetime.datetime.today().strftime("%j")
         datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")
         "{0:%Y}-{0:%m}-{0:%d}".format(datetime.datetime.today())
         ```` 

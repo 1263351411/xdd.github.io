@@ -29,7 +29,7 @@ str4 = """select * from user where name = 'xdd' """
     * new 替换字符
     * count 替换次数，不指定默认全部替换  
      ![str0014](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/str0014.png)
-* strip([chars])->str #将自定字符串两端去除自定的字符集chars中的所有字符,如果chars没有指定，去除两端的空白字符
+* strip([chars])->str 【去除首尾空格】#将自定字符串两端去除自定的字符集chars中的所有字符,如果chars没有指定，去除两端的空白字符
     * chars 切割符  
     ![str0016](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/str0016.png)  
     ![str0017](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/str0017.png)  
