@@ -96,4 +96,72 @@ for s in stt:
 ![base64_005](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/base64_005.jpg)
 
 
+## java实现base64编码：
+````java
+package com.gdy.wts;
+import java.util.Base64;
+
+public class text3 {
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		String[] text = {"a","`","ab","abc","abcd"};
+		for(String str :text){
+			byte[] sysencode = Base64.getEncoder().encode(str.getBytes());
+			System.out.println("系統base64编码为：\t"+ new String(sysencode));
+			System.out.println("base64encode编码为:\t"+ new String(base64Encode(str)));
+		}
+		
+	}
+	private static final char[] toBase64 = {
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/'
+    };
+	
+	/**
+	 * base64编码
+	 * @param str 需要编码的字符串
+	 * @return byte[] base64编码 
+	 */
+	public static byte[] base64Encode(String str){
+		
+		byte[] bstr = str.getBytes();
+		int mo = bstr.length%3;
+		byte[] b64 = new byte[(mo==0?str.length()/3:str.length()/3+1)*4];
+		int b64index = 0;
+		int i=2;
+		for(;i<bstr.length;i+=3){
+			int temp = bstr[i-2]<<16 | bstr[i-1]<<8 | bstr[i];
+			b64[b64index++] = (byte)toBase64[ temp>>18];
+			b64[b64index++] = (byte)toBase64[ (temp>>12) & 0x3f];
+			b64[b64index++] = (byte)toBase64[ (temp>>6) & 0x3f];
+			b64[b64index++] = (byte)toBase64[temp & 0x3f];
+		}
+		if(mo!=0){
+			int temp = 0;
+			//补0
+			for(int k=1;k<=mo;k++){
+				temp |= bstr[i-3+k]<<(8*(3-k));
+			}
+			b64[b64index++] = (byte)toBase64[ temp>>18];
+			b64[b64index++] = (byte)toBase64[ (temp>>12) & 0x3f];
+			b64[b64index++] = (byte)toBase64[ (temp>>6) & 0x3f];
+			b64[b64index++] = (byte)toBase64[temp & 0x3f];
+			//替换等号
+			for(int k=1;k<=3-mo;k++){
+				b64[b64.length-k] = '=';
+			}
+		}
+		return b64;
+	}
+
+}
+````
+* 运行结果如下：
+![base64_006](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/base64_006.jpg)
+
 
