@@ -35,6 +35,8 @@ sio.close()
 * 内存中，开辟的一个二进制模式的buffer，可以像文件对象(TextIoWrapper)一样操作它
 * 当close方法被调用的时候，这个buffer会被释放
 * 大部分方法和文件对象TextIoWrapper方法一样。新增加了getvalue()方法 
+#### 常用方法
+* getvalue() #获取缓存区全部内容，跟文件指针没有关系
 ````python
 from io import BytesIO
 bio = BytesIO()
