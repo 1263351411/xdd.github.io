@@ -23,8 +23,8 @@ print(sio.read())
 print(sio.getvalue())#无视指针位置，直接获取所有内容
 sio.close()
 ````  
-![stringIO_001](../../img/python/stringIO_001.jpg)  
-* 其他方法请参照文件操作中BufferedIoBase类中的方法[文件操作](文件操作.md)  
+![stringIO_001](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/stringIO_001.jpg)  
+* 其他方法请参照文件操作中BufferedIoBase类中的方法[文件操作](https://github.com/1263351411/xdd.github.io/blob/master/python%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/%E6%96%87%E4%BB%B6IO%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.md)  
 
 ### BytesIO
 * io模块中的类
@@ -45,7 +45,8 @@ print(bio.read())
 print(bio.getvalue())#无视指针位置，直接获取全部内容
 bio.close()
 ````  
-![bytesIO_001](../../img/python/bytesIO_001.jpg)
+![bytesIO_001](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/bytesIO_001.jpg)
 
-* 其他方法请参照文件操作中BufferedIoBase类中的方法[文件操作](文件操作.md)  
+* 其他方法请参照文件操作中BufferedIoBase类中的方法[文件操作](https://github.com/1263351411/xdd.github.io/blob/master/python%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/%E6%96%87%E4%BB%B6IO%E6%93%8D%E4%BD%9C/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.md)   
+
 

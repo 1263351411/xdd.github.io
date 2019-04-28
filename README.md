@@ -26,11 +26,12 @@
     4. [生成器函数和yield from语法](python基本知识/函数/生成器函数和yield与from.md)
     5. [高阶函数与函数的柯里化](python基本知识/函数/高阶函数与函数的柯里化.md)
     6. [递归](python基本知识/函数/递归.md)
+* 文件IO操作
+    1. [文件操作](python基本知识/文件IO操作/文件操作.md)
 * 其他
     1. [random随机数](python基本知识/其他/random随机数.md)
     2. [datetime时间模块的使用](python基本知识/其他/datetime时间模块的使用.md)  
     3. [python常用模块简介](python基本知识/其他/python常用模块简介.md)
-    4. [文件操作](python基本知识/其他/文件操作.md)
 ## Python高级知识
 1. [装饰器](python高级知识/装饰器与functools模块.md)
 ## Python数据结构
