@@ -27,7 +27,8 @@
     5. [高阶函数与函数的柯里化](python基本知识/函数/高阶函数与函数的柯里化.md)
     6. [递归](python基本知识/函数/递归.md)
 * 文件IO操作
-    1. [文件操作](python基本知识/文件IO操作/文件操作.md)
+    1. [文件操作](python基本知识/文件IO操作/文件操作.md)  
+    2. [StringIO和BytesIO](python基本知识/文件IO操作/StringIO和BytesIO.md)
 * 其他
     1. [random随机数](python基本知识/其他/random随机数.md)
     2. [datetime时间模块的使用](python基本知识/其他/datetime时间模块的使用.md)  
