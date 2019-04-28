@@ -1,0 +1,51 @@
+## StringIO和BytesIO
+@[TOC](StringIO和BytesIO)  
+
+### StringIO
+* io模块中的类  
+    * 导入方式
+    ````python
+    from io import StringIO
+    ```` 
+* 内存中，开辟的一个文本模式的buffer，可以像文件对象一样操作它
+* 当close方法被调用的时候，这个buffer会被释放
+* 大部分方法和文件对象TextIoWrapper方法一样。新增加了getvalue()方法  
+#### 常用方法
+* getvalue() #获取缓存区全部内容，跟文件指针没有关系
+````python
+import io
+#在内存中构建
+sio = io.StringIO() #像文件对象一样炒作
+print(sio.readable(),sio.writable(),sio.seekable())
+sio.write("abcd")
+sio.seek(0)
+print(sio.read())
+print(sio.getvalue())#无视指针位置，直接获取所有内容
+sio.close()
+````  
+![stringIO_001](../../img/python/stringIO_001.jpg)  
+* 其他方法请参照文件操作中BufferedIoBase类中的方法[文件操作](文件操作.md)  
+
+### BytesIO
+* io模块中的类
+    * 导入方法
+    ````python
+    from io import BytesIO
+    ````  
+* 内存中，开辟的一个二进制模式的buffer，可以像文件对象(TextIoWrapper)一样操作它
+* 当close方法被调用的时候，这个buffer会被释放
+* 大部分方法和文件对象TextIoWrapper方法一样。新增加了getvalue()方法 
+````python
+from io import BytesIO
+bio = BytesIO()
+print(bio.readable(),bio.writable(),bio.seekable())
+bio.write(b"abcd")
+bio.seek(0)
+print(bio.read())
+print(bio.getvalue())#无视指针位置，直接获取全部内容
+bio.close()
+````  
+![bytesIO_001](../../img/python/bytesIO_001.jpg)
+
+* 其他方法请参照文件操作中BufferedIoBase类中的方法[文件操作](文件操作.md)  
+
