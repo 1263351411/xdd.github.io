@@ -1,4 +1,8 @@
 ## python中零碎关键字语法
+### 运算符
+* 数学运算符
+* 集合运算符
+
 ### 1. if else 条件判断
 * 简单示例：
 ````python
@@ -60,7 +64,22 @@ set2 = {i:i+1 for i in range(5)} #等价于{0: 1, 1: 2, 2: 3, 3: 4, 4: 5}
 lst = (i+1 for i in range(5))
 next(lst)  #当lst获取到最后一个值后再次next会报错
 ````
-
+### ipython的基本使用  
+* ? #ipython的概述和简介。
+* help(name) #查询指定名称的帮助
+* obj? #列出obj对象的详细信息
+* obj?? #列出obj对象的更加详细信息
+````python
+str.format? #查看str中format的使用方法
+int?? #查看int使用方法
+````  
+* \_ 表示前一次输出
+* \_\_ 表示倒数第二次输出
+* \_\_\_ 表示倒数第三次输出
+* _dh 目录历史
+* _oh 输出历史
+### shelll命令
+* 语法 !command 执行shell命令
 ### 7. lambda匿名函数
 * 简单示例
 ````python
