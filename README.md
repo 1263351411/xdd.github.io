@@ -34,7 +34,8 @@
 * 配置文件
     1. [csv配置文件](python基本知识/配置文件/1.csv配置文件.md)
     2. [ini配置文件](python基本知识/配置文件/2.ini配置文件.md)
-    3. [json配置文件](python基本知识/配置文件/3.json配置文件.md)
+    3. [json配置文件](python基本知识/配置文件/3.json配置文件.md)  
+    4. [Messagepack序列化传输](python基本知识/配置文件/4.Messagepack序列化传输.md)  
 * 其他
     1. [random随机数](python基本知识/其他/random随机数.md)
     2. [datetime时间模块的使用](python基本知识/其他/datetime时间模块的使用.md)  
