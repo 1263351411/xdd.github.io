@@ -31,6 +31,10 @@
     2. [StringIO和BytesIO](python基本知识/文件IO操作/2.StringIO和BytesIO.md)
     3. [路径操作](python基本知识/文件IO操作/3.路径操作.md)
     4. [高级文件操作模块shutil](python基本知识/文件IO操作/4.高级文件操作模块shutil.md)
+* 配置文件
+    1. [csv配置文件](python基本知识/配置文件/1.csv配置文件.md)
+    2. [ini配置文件](python基本知识/配置文件/2.ini配置文件.md)
+    3. [json配置文件](python基本知识/配置文件/3.json配置文件.md)
 * 其他
     1. [random随机数](python基本知识/其他/random随机数.md)
     2. [datetime时间模块的使用](python基本知识/其他/datetime时间模块的使用.md)  
