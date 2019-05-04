@@ -78,8 +78,35 @@ int?? #查看int使用方法
 * \_\_\_ 表示倒数第三次输出
 * _dh 目录历史
 * _oh 输出历史
+#### IPython内置的特殊方法
+#####魔术方法
+* %magic格式
+    * %开头是line magic
+    * %%开头是cell magic,notebook的cell
+* %alias 定义一个系统命令的别名
+````python 
+alias ll ls -l
+ll
+````
+* %timeit statement
+    * -n 一个循环loop执行语句多次
+    * -r 循环执行多少次loop，取最好的结果
+* %cd 改变当前工作目录，cd可以认为是%cd的链接。路径历史在_dh中查看
+* %pwd、pwd显示当前工作目录
+* %ls、ls返回文件列表。注意和!ls是不同的
+* 注意：%pwd这种是魔术方法，是IPython的内部实现，和操作系统无关。而!pwd就是要依赖当前操作系统的shell提供的命令执行，默认windows不支持pwd命令
+* %%js、%%javascript在cell中运行js脚本
+````python
+%%js
+alert('a'+1)
+````
 ### shelll命令
 * 语法 !command 执行shell命令
+````python
+!ls -l
+!touch test.txt
+files = !ls -l | grep py
+````
 ### 7. lambda匿名函数
 * 简单示例
 ````python
