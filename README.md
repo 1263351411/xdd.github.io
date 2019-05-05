@@ -32,9 +32,9 @@
     3. [路径操作](Python/python基本知识/文件IO操作/3.路径操作.md)
     4. [高级文件操作模块shutil](Python/python基本知识/文件IO操作/4.高级文件操作模块shutil.md)
 * 配置文件
-    1. [csv配置文件](Python/python基本知识/配置文件/1.csv配置文件.md)
-    2. [ini配置文件](Python/python基本知识/配置文件/2.ini配置文件.md)
-    3. [json配置文件](Python/python基本知识/配置文件/3.json配置文件.md)  
+    1. [csv配置文件与csv对象](Python/python基本知识/配置文件/1.csv配置文件与csv对象.md)
+    2. [ini配置文件与ConfigParser对象](Python/python基本知识/配置文件/2.ini配置文件与ConfigParser对象.md)
+    3. [json配置文件与json对象](Python/python基本知识/配置文件/3.json配置文件与json对象.md)  
     4. [Messagepack序列化传输](Python/python基本知识/配置文件/4.Messagepack序列化传输.md)  
 * 其他
     1. [random随机数](Python/python基本知识/其他/random随机数.md)
