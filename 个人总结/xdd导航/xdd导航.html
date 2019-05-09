@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Change OR Die" />
+<title>xdd导航</title>
+    <style type="text/css">
+        .one_div {
+            padding-left: 20px;
+        }
+        
+        .one_sousuo {
+            margin-top: 50px;
+            margin-left: 300px;
+        }
+        body {
+            font:14px/180% Arial, Helvetica, sans-serif, "华文新魏";
+        }
+
+        * {
+            margin:0;
+            padding:0;
+            list-style-type:none;
+        }
+        
+        a {
+            margin: 5px;
+            color: bisque;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color:mediumpurple;
+        }
+        
+        h1,h2,h3,h4,h5 {
+            color:burlywood;
+        }
+
+        input{
+            border: 1px solid #ccc;
+            padding: 7px 0px;
+            border-radius: 3px;
+            padding-left:5px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+        }
+        input:focus{
+            border-color: #66afe9;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+        }
+
+        
+        /* a,img{border:0;} */
+        
+        #id_big {
+            /* border: 1px solid red; */
+            margin-left: 300px;
+        }
+        
+        #id_inputbaidu {
+            width: 600px;
+            line-height: 30px;
+            font-size: 18px;
+            background:  rgba(240, 202, 202, 0.28)
+        }
+        
+        #id_sousuo {
+            width: 120px;
+            height: 40px;
+            background:  rgba(240, 202, 202, 0.28)
+        }
+    </style>
+    <script type="text/javascript">
+        function xdd_baidu(a) {
+            // a = document.getElementById("id_inputbaidu").value;
+            url = "https://www.baidu.com/s?tn=50000021_hao_pg&" +
+                "ie=utf-8&sc=UWd1pgw-pA7EnHc1FMfqnHRdP1nzn1mLrHmzPauW5y99U1Dznzu9m1YYrHcsn1RLPjb&ssl_sample=s_102&srcqid=3093107475549385291&H123Tmp=nunew7" +
+                "&word=" + a;
+            window.open(url);
+        }
+
+        function xdd_baidu_sousuo(event) {
+            var evt = window.event ? window.event : event;
+            switch (evt.keyCode) {
+                case 13: //按下的是回车键
+                    xdd_baidu(event.value)
+                    break;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<style type="text/css">
+
+</style>
+<div style="z-index: 6; position:absolute;">
+<div id="id_big">
+        <div class="one_div one_sousuo">
+            <input type="text" id="id_inputbaidu" onkeydown="xdd_baidu_sousuo(this)">
+            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value)" value="百度一下" />
+        </div>
+        <div>
+            <h3>搜索</h3>
+            <div class="one_div">
+                <div class="one_div">
+                    <a href="https://www.baidu.com">百度</a>
+                    <a href="https://www.hao123.com">好123</a>
+                    <a href="https://cn.bing.com/">微软必应</a>
+                    <a href="https://www.sogou.com/">搜狗</a>
+                    <a href="https://www.so.com/">360搜索</a>
+                    <a href="https://www.easyicon.net/">图标下载</a>
+                </div>
+                <h4>翻墙</h4>
+                <div class="one_div">
+                    <a href="https://en.wikipedia.org/wiki/Main_Page">维基百科</a>
+                    <a href="https://www.google.com/">谷歌</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3>打字练习</h3>
+            <div class="one_div">
+                <a href="https://www.typingclub.com/sportal/program-3.game">TypingClub打字训练</a>
+                <a href="http://ztype.liyarou.com/#">打字游戏ztype</a>
+            </div>
+            <h3>我的学习</h3>
+            <div class="one_div">
+                <a href="http://study.magedu.com/">马哥教育</a>
+                <a href="https://ke.qq.com/">腾讯课堂</a>
+                <a href="https://study.163.com/">网易云课堂</a>
+                <a href="https://tensorflow.google.cn/">TensorFlow</a>
+            </div>
+        </div>
+        <div>
+            <h3>AI学习</h3>
+            <div class="one_div">
+                <a href="http://www.huaxiaozhuan.com/">AI算法(阿里云)</a><br>
+            </div>
+            <h3>项目学习</h3>
+            <div class="one_div">
+                <a href="https://github.com/facert/awesome-spider">爬虫集合</a>
+                <a href="https://skills.bugbank.cn/">web渗透</a>
+            </div>
+            <h3>综合学习资源</h3>
+            <div class="one_div">
+                <a href="https://www.ittwz.com/">天天微站</a>
+            </div>
+        </div>
+        <div>
+            <h3>编程语言</h3>
+            <div class="one_div">
+                <a href="http://www.w3school.com.cn/html/index.asp">HTML(W3C)</a>
+                <a href="https://www.w3cschool.cn/regex_rmjc/">正则表达式(W3C)</a>
+                <a href="https://blog.csdn.net/ybdesire/article/details/78255427">正则表达式运行原理</a>
+            </div>
+        </div>
+        <div>
+            <h3>软件使用</h3>
+            <div class="one_div">
+                <a href="http://alfred-sun.github.io/markdown-syntax-zhtw/">Markdown中文文档</a>
+                <a href="http://www.android-doc.com/">Android中文帮助文档</a>
+                <a href="https://api.highcharts.com.cn/highcharts">highcharts图表制作帮助文档</a>
+                <a href="http://tool.oschina.net/apidocs">各类文档</a>
+            </div>
+        </div>
+        <div>
+            <h3>常用帮助文档</h3>
+            <div class="one_div">
+                <a href="https://docs.python.org/zh-cn/3/">Python3.7.3</a>
+                <a href="https://www.runoob.com/mongodb/mongodb-tutorial.html">Mongodb帮助文档</a>
+                <a href="https://developers.weixin.qq.com/miniprogram/dev/api/">小程序api</a>
+            </div>
+
+        </div>
+        <div>
+            <h3>开元镜像</h3>
+            <div class="one_div">
+                <a href="https://opsx.alibaba.com/mirror">阿里巴巴开元镜像</a>
+                <a href="http://mirrors.163.com/">网易开元镜像</a>
+                <a href="https://mirrors.huaweicloud.com/">华为开元镜像</a>
+                <a href="http://mirrors.hust.edu.cn/">华中科技大学开元镜像</a>
+            </div>
+        </div>
+        <div>
+            <h3>常用官网</h3>
+            <div class="one_div">
+                <a href="https://github.com/">GitHub</a>
+                <a href="https://www.python.org/">python</a>
+                <a href="https://www.eclipse.org/">Eclipse</a>
+                <a href="https://www.oracle.com/index.html">Oracle</a>
+                <a href="https://www.mysql.com/">MySQL</a>
+                <a href="http://hbase.apache.org">HBase</a>
+                <a href="http://hadoop.apache.org/">Hadoop</a>
+                <a href="http://hive.apache.org/">Hive</a>
+                <a href="http://tomcat.apache.org/">Tomcat</a>
+                <a href="http://www.xitongku.com/">xitongku系统库</a>
+            </div>
+            <h3>三方软件提供</h3>
+            <div class="one_div">
+                <a href="https://www.xfyun.cn/?ch=bdtg">讯飞开放平台</a>
+                <a href="https://www.jiguang.cn/push">极光推送</a>
+                <a href="http://www.mob.com/">MobTech推送</a>
+            </div>
+            <h3>其他官网</h3>
+            <div class="one_div">
+                <a href="http://pypl.github.io/PYPL.html">pypl语言排行榜</a>
+                <a href="https://www.tiobe.com/tiobe-index/">TIOBE语言排行榜</a>
+                <a href="http://www.gsxt.gov.cn/corp-query-homepage.html">企业信用查询</a>
+            </div>
+        </div>
+        <div>
+            <h3>网购休闲</h3>
+            <div class="one_div">
+                <a href="https://www.taobao.com/">淘宝</a>
+                <a href="https://www.vip.com/">唯品会</a>
+                <a href="https://www.vvic.com/gz">收款网</a>
+                <a href="https://www.jd.com/">京东</a>
+                <a href="https://ju.taobao.com/">聚划算</a>
+                <a href="http://www.biyao.com/home/index.html">必要</a>
+            </div>
+            <h3>电影</h3>
+            <div class="one_div">
+                <a href="https://www.dadatu.co/">达达兔</a>
+                <a href="https://www.1144kan.com/">114看</a>
+                <a href="http://www.btbtt08.com/">BT天堂</a>
+                <a href="http://www.88yunpan.com/">88云盘</a>
+            </div>
+        </div>
+    </div>
+</div>
+<canvas id="sakura" style="z-index:5;"></canvas>
+  
+<!-- sakura shader -->
+<script id="sakura_point_vsh" type="x-shader/x_vertex">
+uniform mat4 uProjection;
+uniform mat4 uModelview;
+uniform vec3 uResolution;
+uniform vec3 uOffset;
+uniform vec3 uDOF;  /**x:focus distance, y:focus radius, z:max radius**/
+uniform vec3 uFade; /**x:start distance, y:half distance, z:near fade start**/
+
+attribute vec3 aPosition;
+attribute vec3 aEuler;
+attribute vec2 aMisc; /**x:size, y:fade**/
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+/**varying mat3 rotMat;**/
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+void main(void) {
+    /** Projection is based on vertical angle**/
+    vec4 pos = uModelview * vec4(aPosition + uOffset, 1.0);
+    gl_Position = uProjection * pos;
+    gl_PointSize = aMisc.x * uProjection[1][1] / -pos.z * uResolution.y * 0.5;
+
+    pposition = pos.xyz;
+    psize = aMisc.x;
+    pdist = length(pos.xyz);
+    palpha = smoothstep(0.0, 1.0, (pdist - 0.1) / uFade.z);
+
+    vec3 elrsn = sin(aEuler);
+    vec3 elrcs = cos(aEuler);
+    mat3 rotx = mat3(
+        1.0, 0.0, 0.0,
+        0.0, elrcs.x, elrsn.x,
+        0.0, -elrsn.x, elrcs.x
+    );
+    mat3 roty = mat3(
+        elrcs.y, 0.0, -elrsn.y,
+        0.0, 1.0, 0.0,
+        elrsn.y, 0.0, elrcs.y
+    );
+    mat3 rotz = mat3(
+        elrcs.z, elrsn.z, 0.0, 
+        -elrsn.z, elrcs.z, 0.0,
+        0.0, 0.0, 1.0
+    );
+    mat3 rotmat = rotx * roty * rotz;
+    normal = rotmat[2];
+
+    mat3 trrotm = mat3(
+        rotmat[0][0], rotmat[1][0], rotmat[2][0],
+        rotmat[0][1], rotmat[1][1], rotmat[2][1],
+        rotmat[0][2], rotmat[1][2], rotmat[2][2]
+    );
+    normX = trrotm[0];
+    normY = trrotm[1];
+    normZ = trrotm[2];
+
+    const vec3 lit = vec3(0.6917144638660746, 0.6917144638660746, -0.20751433915982237);
+
+    float tmpdfs = dot(lit, normal);
+    if(tmpdfs < 0.0) {
+        normal = -normal;
+        tmpdfs = dot(lit, normal);
+    }
+    diffuse = 0.4 + tmpdfs;
+
+    vec3 eyev = normalize(-pos.xyz);
+    if(dot(eyev, normal) > 0.0) {
+        vec3 hv = normalize(eyev + lit);
+        specular = pow(max(dot(hv, normal), 0.0), 20.0);
+    }
+    else {
+        specular = 0.0;
+    }
+
+    rstop = clamp((abs(pdist - uDOF.x) - uDOF.y) / uDOF.z, 0.0, 1.0);
+    rstop = pow(rstop, 0.5);
+    /**-0.69315 = ln(0.5)**/
+    distancefade = min(1.0, exp((uFade.x - pdist) * 0.69315 / uFade.y));
+}
+</script>
+<script id="sakura_point_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+/**precision mediump float;**/
+precision highp float;
+#endif
+
+uniform vec3 uDOF;  /**x:focus distance, y:focus radius, z:max radius**/
+uniform vec3 uFade; /**x:start distance, y:half distance, z:near fade start**/
+
+const vec3 fadeCol = vec3(0.08, 0.03, 0.06);
+
+varying vec3 pposition;
+varying float psize;
+varying float palpha;
+varying float pdist;
+
+/**varying mat3 rotMat;**/
+varying vec3 normX;
+varying vec3 normY;
+varying vec3 normZ;
+varying vec3 normal;
+
+varying float diffuse;
+varying float specular;
+varying float rstop;
+varying float distancefade;
+
+float ellipse(vec2 p, vec2 o, vec2 r) {
+    vec2 lp = (p - o) / r;
+    return length(lp) - 1.0;
+}
+
+void main(void) {
+    vec3 p = vec3(gl_PointCoord - vec2(0.5, 0.5), 0.0) * 2.0;
+    vec3 d = vec3(0.0, 0.0, -1.0);
+    float nd = normZ.z; //dot(-normZ, d);
+    if(abs(nd) < 0.0001) discard;
+
+    float np = dot(normZ, p);
+    vec3 tp = p + d * np / nd;
+    vec2 coord = vec2(dot(normX, tp), dot(normY, tp));
+
+    /**angle = 15 degree**/
+    const float flwrsn = 0.258819045102521;
+    const float flwrcs = 0.965925826289068;
+    mat2 flwrm = mat2(flwrcs, -flwrsn, flwrsn, flwrcs);
+    vec2 flwrp = vec2(abs(coord.x), coord.y) * flwrm;
+
+    float r;
+    if(flwrp.x < 0.0) {
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.36, 0.96) * 0.5);
+    }
+    else {
+        r = ellipse(flwrp, vec2(0.065, 0.024) * 0.5, vec2(0.58, 0.96) * 0.5);
+    }
+
+    if(r > rstop) discard;
+
+    vec3 col = mix(vec3(1.0, 0.8, 0.75), vec3(1.0, 0.9, 0.87), r);
+    float grady = mix(0.0, 1.0, pow(coord.y * 0.5 + 0.5, 0.35));
+    col *= vec3(1.0, grady, grady);
+    col *= mix(0.8, 1.0, pow(abs(coord.x), 0.3));
+    col = col * diffuse + specular;
+
+    col = mix(fadeCol, col, distancefade);
+
+    float alpha = (rstop > 0.001)? (0.5 - r / (rstop * 2.0)) : 1.0;
+    alpha = smoothstep(0.0, 1.0, alpha) * palpha;
+
+    gl_FragColor = vec4(col * 0.5, alpha);
+}
+</script>
+<!-- effects -->
+<script id="fx_common_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+<script id="bg_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+/**precision mediump float;**/
+precision highp float;
+#endif
+
+uniform vec2 uTimes;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec3 col;
+    float c;
+    vec2 tmpv = texCoord * vec2(0.8, 1.0) - vec2(0.95, 1.0);
+    c = exp(-pow(length(tmpv) * 1.8, 2.0));
+    col = mix(vec3(0.02, 0.0, 0.03), vec3(0.96, 0.98, 1.0) * 1.5, c);
+    gl_FragColor = vec4(col * 0.5, 1.0);
+}
+</script>
+<script id="fx_brightbuf_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+/**precision mediump float;**/
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec4 col = texture2D(uSrc, texCoord);
+    gl_FragColor = vec4(col.rgb * 2.0 - vec3(0.5), 1.0);
+}
+</script>
+<script id="fx_dirblur_r4_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+/**precision mediump float;**/
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+uniform vec4 uBlurDir; /**dir(x, y), stride(z, w)**/
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    vec4 col = texture2D(uSrc, texCoord);
+    col = col + texture2D(uSrc, texCoord + uBlurDir.xy * uDelta);
+    col = col + texture2D(uSrc, texCoord - uBlurDir.xy * uDelta);
+    col = col + texture2D(uSrc, texCoord + (uBlurDir.xy + uBlurDir.zw) * uDelta);
+    col = col + texture2D(uSrc, texCoord - (uBlurDir.xy + uBlurDir.zw) * uDelta);
+    gl_FragColor = col / 5.0;
+}
+</script>
+<!-- effect fragment shader template -->
+<script id="fx_common_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+/**precision mediump float;**/
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform vec2 uDelta;
+
+varying vec2 texCoord;
+varying vec2 screenCoord;
+
+void main(void) {
+    gl_FragColor = texture2D(uSrc, texCoord);
+}
+</script>
+<!-- post processing -->
+<script id="pp_final_vsh" type="x-shader/x_vertex">
+uniform vec3 uResolution;
+attribute vec2 aPosition;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+    texCoord = aPosition.xy * 0.5 + vec2(0.5, 0.5);
+    screenCoord = aPosition.xy * vec2(uResolution.z, 1.0);
+}
+</script>
+<script id="pp_final_fsh" type="x-shader/x_fragment">
+#ifdef GL_ES
+/**precision mediump float;**/
+precision highp float;
+#endif
+uniform sampler2D uSrc;
+uniform sampler2D uBloom;
+uniform vec2 uDelta;
+varying vec2 texCoord;
+varying vec2 screenCoord;
+void main(void) {
+    vec4 srccol = texture2D(uSrc, texCoord) * 2.0;
+    vec4 bloomcol = texture2D(uBloom, texCoord);
+    vec4 col;
+    col = srccol + bloomcol * (vec4(1.0) + srccol);
+    col *= smoothstep(1.0, 0.0, pow(length((texCoord - vec2(0.5)) * 2.0), 1.2) * 0.5);
+    col = pow(col, vec4(0.45454545454545)); //(1.0 / 2.2)
+
+    gl_FragColor = vec4(col.rgb, 1.0);
+    gl_FragColor.a = 1.0;
+}
+</script>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
