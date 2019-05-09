@@ -14,7 +14,7 @@
     1. [set和集合运算](Python/python基本知识/2.非线性数据结构/1.set和集合运算.md)  
     2. [dict字典，缺省值字典(Python/defaultdict)，有序字典(Python/OrdereedDict)](Python/python基本知识/2.非线性数据结构/2.dict字典.md)   
 * 3.基本语法知识
-    1. [Python基本知识点(Python/数据类型,变量,if,for,while)](Python/python基本知识/3.基本语法知识/1.Python基本知识点(Python/数据类型,变量,if,for,while).md)  
+    1. [Python基本知识点(Python/数据类型,变量,if,for,while)](Python/python基本知识/3.基本语法知识/1.Python基本知识点(数据类型,变量,if,for,while).md)  
     2. [Python中零碎的关键字语法](Python/python基本知识/3.基本语法知识/2.Python中零碎关键字语法.md)   
     3. [切片](Python/python基本知识/3.基本语法知识/3.切片.md)   
     4. [封装和解构及特殊变量](Python/python基本知识/3.基本语法知识/4.封装和解构及特殊变量.md)   
