@@ -1,5 +1,5 @@
-#![oct]
 # argparse命令行解析模块
+@[toc]
 一个可执行文件或者脚本都可以接受参数。
 ````shell
 ls -l /etc
