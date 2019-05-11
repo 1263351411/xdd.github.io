@@ -45,6 +45,8 @@
 ## Python高级知识
 1. [装饰器](Python/python高级知识/1.装饰器与functools模块.md)
 2. [argparse命令行解析模块](Python/python高级知识/2.argparse命令行解析模块.md)
+3. [正则表达式](Python/python高级知识/3.正则表达式.md)
+4. [Python中的re模块正则](Python/python高级知识/4.Python中的re模块正则.md)
 ## Python数据结构
 1. [树的概念和基本性质](Python/Python数据结构/1.树的概念和基本性质.md)
 2. [图](Python/Python数据结构/2.图.md)
