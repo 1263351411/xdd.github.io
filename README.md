@@ -54,13 +54,13 @@
 1. [汉诺塔问题](Python/python经典算法/1.汉诺塔问题.md)
 2. [十大排序算法](Python/python经典算法/2.十大排序算法.md)
 3. [base64编码和解码](Python/python经典算法/3.base64编码和解码.md) 
-## Python作业
-1. [基本练习1](Python/Python作业/基本练习1.md)
-2. [基本练习2](Python/Python作业/基本练习2.md)
-3. [基本练习3](Python/Python作业/基本练习3.md)
-4. [基本练习4](Python/Python作业/基本练习4.md)
-5. [作业20190422](Python/Python作业/作业20190422.md)
-6. [作业20190429](Python/Python作业/作业20190429.md)
+## python作业
+1. [基本练习1](Python/python作业/基本练习1.md)
+2. [基本练习2](Python/python作业/基本练习2.md)
+3. [基本练习3](Python/python作业/基本练习3.md)
+4. [基本练习4](Python/python作业/基本练习4.md)
+5. [作业20190422](Python/python作业/作业20190422.md)
+6. [作业20190429](Python/python作业/作业20190429.md)
 
 # java  
 ## java基础知识  
