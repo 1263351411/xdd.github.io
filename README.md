@@ -53,7 +53,8 @@
 ## python经典算法
 1. [汉诺塔问题](Python/python经典算法/1.汉诺塔问题.md)
 2. [十大排序算法](Python/python经典算法/2.十大排序算法.md)
-3. [base64编码和解码](Python/python经典算法/3.base64编码和解码.md) 
+3. [base64编码和解码](Python/python经典算法/3.base64编码和解码.md)  
+4. [求最长公共子串](Python/python经典算法/4.求最长公共子串.md) 
 ## python作业
 1. [基本练习1](Python/python作业/基本练习1.md)
 2. [基本练习2](Python/python作业/基本练习2.md)
