@@ -55,6 +55,13 @@
 2. [十大排序算法](Python/python经典算法/2.十大排序算法.md)
 3. [base64编码和解码](Python/python经典算法/3.base64编码和解码.md)  
 4. [求最长公共子串](Python/python经典算法/4.求最长公共子串.md) 
+## python项目实战
+### 1.日志分析
+1. [日志分析](Python/项目实战/1.日志分析/1.日志分析.md)
+    * 相关组件
+    * [queue模块--队列](Python/项目实战/1.日志分析/queue模块--队列.md)
+    * [urlparse对象URL分析器](Python/项目实战/1.日志分析/urlparse对象URL分析器.md)
+    * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)
 ## python作业
 1. [基本练习1](Python/python作业/基本练习1.md)
 2. [基本练习2](Python/python作业/基本练习2.md)
