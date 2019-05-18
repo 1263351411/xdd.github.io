@@ -1,11 +1,11 @@
 @[toc]
-# user_agents模块中的parse对象   
-安装   
-> pip install user-agents
-* useragent分析器。   
-useragent指的是，软件安装一定的格式向远端的服务器提供一个标识自己的字符串。在HTTP协议中，使用user-agent字段传送这个字符串。     
-注意：这个值可以被修改   
-格式：   
+# user_agents模块中的parse对象
+安装  
+> pip install pyyaml user-agents ua-parser
+* useragent分析器。  
+useragent指的是，软件安装一定的格式向远端的服务器提供一个标识自己的字符串。在HTTP协议中，使用user-agent字段传送这个字符串。  
+注意：这个值可以被修改  
+格式：  
 ````
 现在浏览器的user-agent值格式一般如下： Mozilla/[version] ([system and browser information]) [platform] ([platform details]) [extensions]
  
