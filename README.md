@@ -3,7 +3,7 @@
 2. [二进制的运算与方法中参数设计的技巧](个人总结/二进制的运算与方法中参数设计的技巧.md)  
 # Python  
 ## python重点注意地方
-1. [python重点注意地方](Python/python基本知识/python重点注意地方.md)  
+1. [python重点注意地方](Python/python基本知识/7.高级语法知识/python重点注意地方.md)  
 ## python基本知识  
 * 1.线性数据结构
     1. [str字符串](Python/python基本知识/1.线性数据结构/1.str字符串.md)
@@ -38,6 +38,10 @@
     2. [ini配置文件与ConfigParser对象](Python/python基本知识/6.配置文件/2.ini配置文件与ConfigParser对象.md)
     3. [json配置文件与json对象](Python/python基本知识/6.配置文件/3.json配置文件与json对象.md)  
     4. [Messagepack序列化传输](Python/python基本知识/6.配置文件/4.Messagepack序列化传输.md)  
+* 7.高级语法知识
+    1. [面向对象](Python/python基本知识/7.高级语法知识/1.面向对象.md)  
+    * [模块](Python/python基本知识/7.高级语法知识/模块.md)  
+    * [类](Python/python基本知识/7.高级语法知识/类.md)  
 * 其他
     1. [random随机数](Python/python基本知识/其他/1.random随机数.md)
     2. [datetime时间模块的使用](Python/python基本知识/其他/2.datetime时间模块的使用.md)  
