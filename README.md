@@ -1,10 +1,16 @@
 # 个人总结
+
 1. [十六进制与八进制对应二进制的规律](个人总结/十六进制与八进制对应二进制的规律.md)  
 2. [二进制的运算与方法中参数设计的技巧](个人总结/二进制的运算与方法中参数设计的技巧.md)  
-# Python  
+
+# Python
+
 ## python重点注意地方
-1. [python重点注意地方](Python/python基本知识/7.高级语法知识/python重点注意地方.md)  
-## python基本知识  
+
+1. [python重点注意地方](Python/python基本知识/7.高级语法知识/python重点注意地方.md)
+
+## python基本知识
+
 * 1.线性数据结构
     1. [str字符串](Python/python基本知识/1.线性数据结构/1.str字符串.md)
     2. [bytes与bytearray](Python/python基本知识/1.线性数据结构/2.bytes与bytearray.md) 
@@ -40,44 +46,58 @@
     4. [Messagepack序列化传输](Python/python基本知识/6.配置文件/4.Messagepack序列化传输.md)  
 * 7.高级语法知识
     1. [面向对象](Python/python基本知识/7.高级语法知识/1.面向对象.md)  
+    2. [Python的类](Python/python基本知识/7.高级语法知识/2.Python的类.md)  
+    3. [Python中类的继承](Python/python基本知识/7.高级语法知识/3.Python中类的继承.md)  
     * [模块](Python/python基本知识/7.高级语法知识/模块.md)  
     * [类](Python/python基本知识/7.高级语法知识/类.md)  
 * 其他
     1. [random随机数](Python/python基本知识/其他/1.random随机数.md)
     2. [datetime时间模块的使用](Python/python基本知识/其他/2.datetime时间模块的使用.md)  
     3. [python常用模块简介](Python/python基本知识/其他/3.python常用模块简介.md)
+
 ## Python高级知识
+
 1. [装饰器](Python/python高级知识/1.装饰器与functools模块.md)
 2. [argparse命令行解析模块](Python/python高级知识/2.argparse命令行解析模块.md)
 3. [正则表达式](Python/python高级知识/3.正则表达式.md)
 4. [Python中的re模块正则](Python/python高级知识/4.Python中的re模块正则.md)
+
 ## Python数据结构
+
 1. [树的概念和基本性质](Python/Python数据结构/1.树的概念和基本性质.md)
 2. [图](Python/Python数据结构/2.图.md)
+
 ## python经典算法
+
 1. [汉诺塔问题](Python/python经典算法/1.汉诺塔问题.md)
 2. [十大排序算法](Python/python经典算法/2.十大排序算法.md)
 3. [base64编码和解码](Python/python经典算法/3.base64编码和解码.md)  
-4. [求最长公共子串](Python/python经典算法/4.求最长公共子串.md) 
+4. [求最长公共子串](Python/python经典算法/4.求最长公共子串.md)
+
 ## python项目实战
+
 ### 1.日志分析
+
 1. [日志分析](Python/项目实战/1.日志分析/1.日志分析.md)
     * 相关组件
     * [queue模块--队列](Python/项目实战/1.日志分析/queue模块--队列.md)
     * [urlparse对象URL分析器](Python/项目实战/1.日志分析/urlparse对象URL分析器.md)
     * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)
+
 ## python作业
+
 1. [基本练习1](Python/python作业/基本练习1.md)
 2. [基本练习2](Python/python作业/基本练习2.md)
 3. [基本练习3](Python/python作业/基本练习3.md)
 4. [基本练习4](Python/python作业/基本练习4.md)
 5. [作业20190422](Python/python作业/作业20190422.md)
 6. [作业20190429](Python/python作业/作业20190429.md)
+7. [20190515类的练习](Python/python作业/20190515类的练习.md)
 
-# java  
+# java
+
 ## java基础知识  
 
-## java高级知识  
+## java高级知识
+
 1. [装饰模式](Python/java/java高级知识/装饰模式.md)
-
-
