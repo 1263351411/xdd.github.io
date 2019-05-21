@@ -48,8 +48,9 @@
     1. [面向对象](Python/python基本知识/7.高级语法知识/1.面向对象.md)  
     2. [Python的类](Python/python基本知识/7.高级语法知识/2.Python的类.md)  
     3. [Python中类的继承](Python/python基本知识/7.高级语法知识/3.Python中类的继承.md)  
-    * [模块](Python/python基本知识/7.高级语法知识/模块.md)  
-    * [类](Python/python基本知识/7.高级语法知识/类.md)  
+    4. [Python中类的多继承](Python/python基本知识/7.高级语法知识/4.Python中类的多继承.md)  
+        * [模块](Python/python基本知识/7.高级语法知识/模块.md)  
+ 
 * 其他
     1. [random随机数](Python/python基本知识/其他/1.random随机数.md)
     2. [datetime时间模块的使用](Python/python基本知识/其他/2.datetime时间模块的使用.md)  
