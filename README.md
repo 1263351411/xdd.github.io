@@ -9,7 +9,7 @@
 
 * 1.线性数据结构
     1. [str字符串](Python/python基础知识/1.线性数据结构/1.str字符串.md)
-    2. [bytes与bytearray](Python/python基础知识/1.线性数据结构/2.bytes与bytearray.md) 
+    2. [bytes与bytearray](Python/python基础知识/1.线性数据结构/2.bytes与bytearray.md)  
     3. [tuple元组,namedtuple命名元组](Python/python基础知识/1.线性数据结构/3.tuple元组,namedtuple命名元组.md)
     4. [list列表](Python/python基础知识/1.线性数据结构/4.list列表.md)
 * 2.非线性数据结构 
@@ -40,7 +40,7 @@
     1. [csv配置文件与csv对象](Python/python基础知识/6.配置文件/1.csv配置文件与csv对象.md)
     2. [ini配置文件与ConfigParser对象](Python/python基础知识/6.配置文件/2.ini配置文件与ConfigParser对象.md)
     3. [json配置文件与json对象](Python/python基础知识/6.配置文件/3.json配置文件与json对象.md)  
-    4. [Messagepack序列化传输](Python/python基础知识/6.配置文件/4.Messagepack序列化传输.md)   
+    4. [Messagepack序列化传输](Python/python基础知识/6.配置文件/4.Messagepack序列化传输.md)  
 * 其他
     1. [random随机数](Python/python基础知识/其他/1.random随机数.md)
     2. [datetime时间模块的使用](Python/python基础知识/其他/2.datetime时间模块的使用.md)  
@@ -58,7 +58,7 @@
         * [模块](Python/python高级知识/1.高级语法知识/模块.md)  
 
 * 2.高级模块使用
-    1. [1.缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
+    1. [缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
     2. [argparse命令行解析模块](Python/python高级知识/2.高级模块使用/2.argparse命令行解析模块.md)
     3. [正则表达式](Python/python高级知识/2.高级模块使用/3.正则表达式.md)
     4. [Python中的re模块正则](Python/python高级知识/2.高级模块使用/4.Python中的re模块正则.md)
@@ -80,10 +80,13 @@
 ### 1.日志分析
 
 1. [日志分析](Python/项目实战/1.日志分析/1.日志分析.md)
-    * 相关组件
     * [queue模块--队列](Python/项目实战/1.日志分析/queue模块--队列.md)
     * [urlparse对象URL分析器](Python/项目实战/1.日志分析/urlparse对象URL分析器.md)
-    * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)
+    * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)  
+
+### 2. 模拟购物车购物
+
+1. [模拟购物车购物](Python/项目实战/2.模拟购物车购物/模拟购物车购物.md)
 
 ## python作业
 
