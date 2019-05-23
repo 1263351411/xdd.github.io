@@ -45,7 +45,8 @@
     1. [random随机数](Python/python基础知识/其他/1.random随机数.md)
     2. [datetime时间模块的使用](Python/python基础知识/其他/2.datetime时间模块的使用.md)  
     3. [python常用模块简介](Python/python基础知识/其他/3.python常用模块简介.md)
-    4. [python重点注意地方](Python/python基础知识/其他/python重点注意地方.md)
+    4. [PEP-Python规范](Python/python基础知识/其他/4.PEP-Python规范.md)
+    * [python重点注意地方](Python/python基础知识/其他/python重点注意地方.md)
 
 ## Python高级知识
 
@@ -54,7 +55,8 @@
     2. [Python的类](Python/python高级知识/1.高级语法知识/2.Python的类.md)  
     3. [Python中类的继承](Python/python高级知识/1.高级语法知识/3.Python中类的继承.md)  
     4. [Python中类的多继承](Python/python高级知识/1.高级语法知识/4.Python中类的多继承.md)  
-    5. [异常处理](Python/python高级知识/1.高级语法知识/5.异常处理.md)  
+    5. [类的特殊属性与魔术方法](Python/python高级知识/1.高级语法知识/5.类的特殊属性与魔术方法.md)  
+    8. [异常处理](Python/python高级知识/1.高级语法知识/8.异常处理.md)  
         * [模块](Python/python高级知识/1.高级语法知识/模块.md)  
 
 * 2.高级模块使用
