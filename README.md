@@ -21,7 +21,6 @@
     3. [切片](Python/python基础知识/3.基础语法知识/3.切片.md)  
     4. [封装和解构及特殊变量](Python/python基础知识/3.基础语法知识/4.封装和解构及特殊变量.md)  
     5. [解析式和生成器表达式](Python/python基础知识/3.基础语法知识/5.解析式和生成器表达式.md)
-    6. [类型注解与参数注解](Python/python基础知识/3.基础语法知识/6.类型注解与参数注解.md)
 * 4.函数
     1. [内建函数和可迭代对象，迭代器](Python/python基础知识/4.函数/1.内建函数和可迭代对象，迭代器.md)  
     2. [函数](Python/python基础知识/4.函数/2.函数.md)
@@ -29,6 +28,8 @@
     4. [生成器函数和yield from语法](Python/python基础知识/4.函数/4.生成器函数和yield与from.md)
     5. [高阶函数与函数的柯里化](Python/python基础知识/4.函数/5.高阶函数与函数的柯里化.md)
     6. [递归](Python/python基础知识/4.函数/6.递归.md)
+    7. [类型注解与参数注解](Python/python基础知识/4.函数/7.类型注解与参数注解.md)  
+    8. [装饰器](Python/python基础知识/4.函数/8.装饰器与functools模块.md)
 * 5.文件IO操作
     1. [文件操作](Python/python基础知识/5.文件IO操作/1.文件操作.md)  
     2. [StringIO和BytesIO](Python/python基础知识/5.文件IO操作/2.StringIO和BytesIO.md)
@@ -57,10 +58,10 @@
         * [模块](Python/python高级知识/1.高级语法知识/模块.md)  
 
 * 2.高级模块使用
-    1. [装饰器](Python/python高级知识/1.装饰器与functools模块.md)
-    2. [argparse命令行解析模块](Python/python高级知识/2.argparse命令行解析模块.md)
-    3. [正则表达式](Python/python高级知识/3.正则表达式.md)
-    4. [Python中的re模块正则](Python/python高级知识/4.Python中的re模块正则.md)
+    1. [1.缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
+    2. [argparse命令行解析模块](Python/python高级知识/2.高级模块使用/2.argparse命令行解析模块.md)
+    3. [正则表达式](Python/python高级知识/2.高级模块使用/3.正则表达式.md)
+    4. [Python中的re模块正则](Python/python高级知识/2.高级模块使用/4.Python中的re模块正则.md)
 
 ## 数据结构思想
 
