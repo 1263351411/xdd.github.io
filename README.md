@@ -56,9 +56,13 @@
     3. [Python中类的继承](Python/python高级知识/1.高级语法知识/3.Python中类的继承.md)  
     4. [Python中类的多继承](Python/python高级知识/1.高级语法知识/4.Python中类的多继承.md)  
     5. [类的特殊属性与魔术方法](Python/python高级知识/1.高级语法知识/5.类的特殊属性与魔术方法.md)  
-    8. [异常处理](Python/python高级知识/1.高级语法知识/8.异常处理.md)  
-        * [模块](Python/python高级知识/1.高级语法知识/模块.md)  
-
+    6. [类的魔术方法之--上下文管理](Python/python高级知识/1.高级语法知识/6.类的魔术方法之--上下文管理.md)  
+    7. [类的魔术方法之--反射](Python/python高级知识/1.高级语法知识/7.类的魔术方法之--反射.md)  
+    8. [类与描述器](Python/python高级知识/1.高级语法知识/8.类与描述器.md)  
+    9. [异常处理](Python/python高级知识/1.高级语法知识/9.异常处理.md)  
+    10. [模块](Python/python高级知识/1.高级语法知识/10.模块.md)  
+    11. [内存统计与slots及Python的对象模型](Python/python高级知识/1.高级语法知识/11.内存统计与slots及Python的对象模型.md)  
+    12. [类中属性和方法大全](Python/python高级知识/1.高级语法知识/12.类中属性和方法大全.md)  
 * 2.高级模块使用
     1. [缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
     2. [argparse命令行解析模块](Python/python高级知识/2.高级模块使用/2.argparse命令行解析模块.md)
