@@ -1,5 +1,4 @@
 import functools,datetime,inspect
-
 def xdd_print(pstr:str):
     """
     日志输出方法，需要改进，添加功能。
@@ -102,6 +101,36 @@ def xdd_paramCheck(fn):
         return fn(*args,**kwargs)
     return _xdd_paramCheck
 
+class Xdd_DataInject:
+    """类型检查，可以帮助类实例化时进行类型检查"""
+    def __new__(cls, clsto):
+        sig = inspect.signature(clsto)
+        params = sig.parameters
+        for name,param in params.items():
+            # print(name,param.name,param.kind,param.default,param.annotation)
+            if param.annotation != param.empty:
+                setattr(clsto,name,Xdd_DataInject._TypeCheck(name,param.annotation))
+        return clsto
+
+    class _TypeCheck:
+        """内部内，帮忙解决类型检查"""
+        def __init__(self, name, typ):
+            self.name = name
+            self.typ = typ
+
+        def __get__(self, instance, owner):
+            if instance:
+                return instance.__dict__[self.name]
+
+        def __set_name__(self, owner, name):
+            self.name = name
+
+        def __set__(self, instance, value):
+            if isinstance(value, self.typ):
+                instance.__dict__[self.name] = value
+            else:
+                raise TypeError("类型错误{}的类型必须是{}".format(self.name, self.typ))
+
 class Xdd_Fib:
     """
     斐波拉契数列类，获取第num个位置的斐波拉契数列。
@@ -134,7 +163,5 @@ class Xdd_Fib:
 
     __str__ = __repr__
     __getitem__ = __call__ #类可以像数组一样访问
-
-print("Hello word")
 
 
