@@ -7,6 +7,26 @@ def xdd_print(pstr:str):
     """
     print(pstr)
 
+class StaticMethod:
+    """静态方法装饰器，类似于staticMethod"""
+    def __init__(self,fn):
+        self.fn = fn
+
+    def __get__(self, instance, owner):
+        return self.fn
+
+class ClassMethod:
+    """类方法装饰器，类似于classmethod"""
+    def __init__(self,fn):
+        self.fn = fn
+
+    def __get__(self, instance, owner):
+        def _fn(*args,**kwargs):
+            return self.fn(owner,*args,**kwargs)
+        functools.update_wrapper(_fn,self.fn)
+        # return functools.partial(self.fn,owner) #也可以使用偏函数
+        return _fn
+
 def xdd_time(fn):
     """
     时间统计，统计函数执行时间
