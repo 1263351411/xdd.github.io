@@ -1,4 +1,5 @@
 import functools,datetime,inspect
+
 def xdd_print(pstr:str):
     """
     日志输出方法，需要改进，添加功能。
@@ -133,5 +134,7 @@ class Xdd_Fib:
 
     __str__ = __repr__
     __getitem__ = __call__ #类可以像数组一样访问
+
+print("Hello word")
 
 
