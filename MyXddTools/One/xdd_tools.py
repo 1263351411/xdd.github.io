@@ -27,6 +27,32 @@ class ClassMethod:
         # return functools.partial(self.fn,owner) #也可以使用偏函数
         return _fn
 
+class Property:
+    """自己实现property和Property功能一样"""
+    def __init__(self,fn):
+        self._fn = fn
+
+    def setter(self,fn):
+        self.set = fn
+        return self
+
+    def deleter(self,fn):
+        self.defn = fn
+        return self
+
+    def __delete__(self, instance):
+        if hasattr(self,"defn"):
+            self.defn(instance)
+
+    def __get__(self, instance, owner):
+        return self._fn(instance)
+
+    def __set__(self, instance, value):
+        if not hasattr(self,"set"):
+            raise AttributeError("can't set attribute")
+        self.set(instance,value)
+
+
 def xdd_time(fn):
     """
     时间统计，统计函数执行时间

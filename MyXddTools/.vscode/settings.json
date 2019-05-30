@@ -2,7 +2,10 @@
     "python.testing.nosetestArgs": [
         "One"
     ],
-    "python.testing.pyTestEnabled": false,
+    "python.testing.pyTestEnabled": true,
     "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": true
+    "python.testing.nosetestsEnabled": true,
+
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true
 }
