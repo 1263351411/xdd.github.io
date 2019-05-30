@@ -101,18 +101,18 @@ class Xdd_Timeit:
         print("{} 运行时长：{}".format(self.fn.__name__,sound.total_seconds()))
         return sum
 
-def xdd_cache(duration = 5):
+def xdd_cache(duration = None):
     """
         为函数生成缓存机制，具有有效时长功能
     :param fn:
     :param duration:缓存时长，单位秒
-    :return:
+    :return: fn
     """
     def _xdd_cache(fn):
         """
             为函数生成缓存机制，具有有效时长功能
         :param fn:
-        :param duration:缓存时长，单位秒
+        :param duration:缓存时长，单位秒,如果为None表示全部缓存，不计算超时
         :return:
         """
         xdd_dict = {} #定义一个字典，用来存参数与对应的计算结果
@@ -125,8 +125,8 @@ def xdd_cache(duration = 5):
             if req is None:
                 req = fn(*args,**kwargs),datetime.datetime.now()
                 xdd_dict[paramestr] = req
-            elif (datetime.datetime.now() - req[1]).total_seconds() > duration: #超时
-                print("缓存超时")
+            elif not duration is None and (datetime.datetime.now() - req[1]).total_seconds() > duration: #超时
+                # print("缓存超时")
                 req = fn(*args, **kwargs),datetime.datetime.now()
                 xdd_dict[paramestr] = req
             return req[0]
