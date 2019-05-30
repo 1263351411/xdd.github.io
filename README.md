@@ -29,7 +29,9 @@
     5. [高阶函数与函数的柯里化](Python/python基础知识/4.函数/5.高阶函数与函数的柯里化.md)
     6. [递归](Python/python基础知识/4.函数/6.递归.md)
     7. [类型注解与参数注解](Python/python基础知识/4.函数/7.类型注解与参数注解.md)  
-    8. [装饰器](Python/python基础知识/4.函数/8.装饰器与functools模块.md)
+    8. [装饰器](Python/python基础知识/4.函数/8.装饰器.md)
+    9. [functools模块](Python/python基础知识/4.函数/9.functools模块.md)
+
 * 5.文件IO操作
     1. [文件操作](Python/python基础知识/5.文件IO操作/1.文件操作.md)  
     2. [StringIO和BytesIO](Python/python基础知识/5.文件IO操作/2.StringIO和BytesIO.md)
@@ -60,14 +62,17 @@
     7. [类的魔术方法之--反射](Python/python高级知识/1.高级语法知识/7.类的魔术方法之--反射.md)  
     8. [类与描述器](Python/python高级知识/1.高级语法知识/8.类与描述器.md)  
     9. [异常处理](Python/python高级知识/1.高级语法知识/9.异常处理.md)  
-    10. [模块](Python/python高级知识/1.高级语法知识/10.模块.md)  
+    10. [类中属性和方法大全](Python/python高级知识/1.高级语法知识/10.类中属性和方法大全.md)
     11. [内存统计与slots及Python的对象模型](Python/python高级知识/1.高级语法知识/11.内存统计与slots及Python的对象模型.md)  
-    12. [类中属性和方法大全](Python/python高级知识/1.高级语法知识/12.类中属性和方法大全.md)  
+    12. [模块化](Python/python高级知识/1.高级语法知识/12.模块化.md)  
+    13. [包](Python/python高级知识/1.高级语法知识/13.包.md)  
+
 * 2.高级模块使用
     1. [缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
     2. [argparse命令行解析模块](Python/python高级知识/2.高级模块使用/2.argparse命令行解析模块.md)
     3. [正则表达式](Python/python高级知识/2.高级模块使用/3.正则表达式.md)
     4. [Python中的re模块正则](Python/python高级知识/2.高级模块使用/4.Python中的re模块正则.md)
+    5. [二分法与bisect模块](Python/python高级知识/2.高级模块使用/5.二分法与bisect模块.md)
 
 ## 数据结构思想
 
@@ -103,6 +108,7 @@
 5. [作业20190422](Python/python作业/作业20190422.md)
 6. [作业20190429](Python/python作业/作业20190429.md)
 7. [20190515类的练习](Python/python作业/20190515类的练习.md)
+8. [20190520类的练习](Python/python作业/20190520类的练习.md)
 
 # java
 
