@@ -101,6 +101,72 @@ class Xdd_Timeit:
         print("{} 运行时长：{}".format(self.fn.__name__,sound.total_seconds()))
         return sum
 
+def xdd_cache(duration = 5):
+    """
+        为函数生成缓存机制，具有有效时长功能
+    :param fn:
+    :param duration:缓存时长，单位秒
+    :return:
+    """
+    def _xdd_cache(fn):
+        """
+            为函数生成缓存机制，具有有效时长功能
+        :param fn:
+        :param duration:缓存时长，单位秒
+        :return:
+        """
+        xdd_dict = {} #定义一个字典，用来存参数与对应的计算结果
+        sig = inspect.signature(fn) #对函数进行签名
+
+        @functools.wraps(fn)
+        def wrapper(*args,**kwargs):
+            paramestr = getparamestr(args,kwargs) #根据参数获取字符串
+            req = xdd_dict.get(paramestr,None)
+            if req is None:
+                req = fn(*args,**kwargs),datetime.datetime.now()
+                xdd_dict[paramestr] = req
+            elif (datetime.datetime.now() - req[1]).total_seconds() > duration: #超时
+                print("缓存超时")
+                req = fn(*args, **kwargs),datetime.datetime.now()
+                xdd_dict[paramestr] = req
+            return req[0]
+
+        def getparamestr(args,kwargs)->str:
+            """
+             格式化参数，将参数格式化为指定格式的字符串
+            :param args:
+            :param kwargs:
+            :return:
+            """
+            parames = sig.parameters
+            pstr = ()
+            isargs = True #标记是否还有位置参数
+            kwdict = {}
+            for k,(name,v) in enumerate(parames.items()):
+                v:inspect.Parameter = v
+                if name == "args": #位置参数已经全部匹配完成
+                    isargs = False
+                    pstr += ("args",tuple(args[k+1:])) #记录剩下的位置参数
+                    continue
+                if name == "kwargs": #关键字位置参数已经匹配完
+                    pstr += ("kwargs",tuple((k,kwargs[k]) for k in kwargs.keys()-kwdict.keys()))
+                    break
+                if isargs:  # 位置参数还没匹配完
+                    if k<len(args):
+                        pstr += (name, args[k])
+                    else: #实际传参中位置参数已经传完
+                        kwval = kwargs.get(name,v.default)
+                        kwdict[name] = kwval  # 记录已经出现的位置参数
+                        pstr += (name,kwval)
+                else:
+                    kwval = kwargs.get(name, v.default)
+                    kwdict[name] = kwval #记录已经出现的位置参数
+                    pstr += (name,kwval)
+                # print(k,name,v.name,v.annotation,v.default)
+            return pstr
+        return wrapper
+    return _xdd_cache
+
 def xdd_paramCheck(fn):
     """
         参数检查
