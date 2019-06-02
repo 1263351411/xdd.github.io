@@ -1,0 +1,280 @@
+@[toc]
+
+# Git服务器搭建
+
+## Gos
+
+Go语言开发的Git服务器[https://gogs.io/](https://gogo.io/)
+
+## 安装环境
+
+1. 本次安装使用Centos6
+
+## 配置yum源，安装mariadb数据库
+
+1. 替换yum源路径
+    * 访问阿里镜像网站[http://mirrors.aliyun.com],找到centos,点击"帮助"  
+
+![git_001](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_001.jpg)  
+
+执行命令：
+>curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo  
+
+下载前可以先移除原有的repo文件。找到对应CentOS版本的repo文件下载。  
+下载完成后执行  
+
+* 1.清除所有yum缓存
+
+>yum clean all
+
+* 2.安装Git
+
+>yum install git -y
+
+![git_002](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_002.jpg)  
+
+* 3.查看可安装的mariadb数据库
+
+>yum list | grep mariadb
+
+![git_003](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_003.jpg)  
+
+* 4.安装mariadb-server会自动安装mariadb
+
+>yum install mariadb-server
+
+![git_004](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_004.jpg)  
+
+* 5.启动mariadb.service和添加mariadb.service的开机启动
+
+>systemctl start mariadb.service  
+>systemctl enable mariadb.service  
+
+![git_005](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_005.jpg)
+
+* 6.使用root用户登录查看数据库，并退出
+
+>mysql -u root
+
+![git_006](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_006.jpg)  
+
+> show databases;
+
+![git_007](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_007.jpg)  
+
+>exit;
+
+![git_008](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_008.jpg)  
+
+* 7.配置数据库
+
+    >mysql_secure_installation
+
+    1. 输入root用户密码(由于安装时，没有制定root用户密码，所有密码为空直接回车即可)  
+    ![git_009](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_009.jpg)  
+
+    2. 输入Y,后重新设置root用户密码  
+    ![git_010](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_010.jpg)  
+
+    3. 删除匿名用于(Y)  
+    ![git_011](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_011.jpg)  
+
+    4. 不允许root用户远程登录。(为了方便管理，自己的虚拟机里面可以选择No,如果是服务器建议选择yes)  
+    ![git_012](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_012.jpg)  
+
+    5. 删除text测试数据库  
+    ![git_013](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_013.jpg)  
+
+    6. 重新加载权限，保存当前配置  
+    ![git_014](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_014.jpg)  
+
+## 安装Gogs服务
+
+* 下载gogs安装程序gogs_0.11.86_linux_amd64.tar.gz，上传到Centos解压。
+
+* 下载地址：[https://dl.gogs.io/0.11.86/gogs_0.11.86_linux_amd64.tar.gz](https://dl.gogs.io/0.11.86/gogs_0.11.86_linux_amd64.tar.gz)  
+* 网址：[https://dl.gogs.io/](https://https://dl.gogs.io/)  
+* 参考官方文档(配置)[https://gogs.io/docs/advanced/conﬁguration_cheat_sheet.html](https://gogs.io/docs/advanced/conﬁguration_cheat_sheet.html)  
+
+* 1.创建git用户,设置git用户密码，登录git用户(用来单独管理Gogs服务)
+
+>useradd git  
+>passwd git  
+>su - git  
+
+![git_015](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_015.jpg)  
+
+* 2.下载安装文件
+
+>wget https://dl.gogs.io/0.11.86/gogs_0.11.86_linux_amd64.tar.gz
+
+![git_016](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_016.jpg)  
+
+* 3.解压文件
+
+>tar xvf gogs_0.11.86_linux_amd64.tar.gz  
+
+![git_017](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_017.jpg)  
+
+* 4.进入gogs文件夹,使用gogs的脚本在数据库中创建一个数据库
+
+>cd gogs/  
+>mysql -uroot -p < scripts/mysql.sql
+
+![git_018](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_018.jpg)  
+
+* 4.1创建完成后可以使用如下命令看看数据库中的变化  
+
+    1. 用root用户登录数据库
+        >mysql -u root -p  
+    2. 查看所有数据库（可以看到增加了gogs数据库）
+        >show databases;  
+    3. 使用gogs数据库，看看数据库中的表
+        >use gogs;  
+        >show tables;  
+        >exit:
+
+![git_019](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_019.jpg)  
+
+* 5.为gogs库创建mysql用户gogs,并授权
+
+    1. 使用root用户登录数据库  
+
+        >mysql -u root -p  
+
+    2. 创建gogs 并授权
+
+        >grant all on gogs.* to 'gogs'@'%' identified by 'gogs';  
+        >flush privileges;
+        >exit;
+
+![git_020](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_020.jpg)  
+
+* 6.配置gogs
+    1. 在gogs目录下建立custom/conf/app.ini配置文件
+        >mkdir -p custom/conf  
+        >cd custom/conf  
+        >touch app.ini  
+
+        ![git_021](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_021.jpg)  
+
+    2. app.ini配置文件如下：
+        > vim app.ini
+
+        ````ini
+        #应用名称，可以改成你组织或公司的名称
+        APP_NAME = xdd
+        #运行应用程序的用户名，建议使用git，即当前用户名
+        RUN_USER = git
+        #可以设置为dev不过，在完成配置后会修改为dev
+        RUN_MOOE = dev
+
+        #配置web服务
+        [Server]
+        HTTP_ADDR = 192.168.61.108
+        HTTP_PORT = 3888
+
+        #配置链接数据库信息
+        [database]
+        DB_TYPE = mysql
+        HOST = 127.0.0.1:3306
+        NAME = gogs
+        USER = gogs
+        PASSWD = gogs
+
+        # 配置security
+        [security]
+        #是否禁止修改app.ini文件，(如果为false会打开网页是就配置，配置完成后会自动改为True)
+        INSTALL_LOCK = false
+        #加密密钥，越长越难破解
+        SECRET_KEY = xiaodiandian@.com.xiaodiandian
+        ````
+ 
+    3. 配置完成后保存退出
+        * 注意app.ini的权限、属主、属组。此文件在配置完，它要被当前服务运行用户修改并保持。  
+        * INSTALL_LOCK之后会被变成true，就是不能看到配置页了。  
+
+* 7.配置gogs服务，设置开机启动  
+    注意：单独启动gogs可以使用命令`gogs web`来完成  
+    1. 拷贝服务文件到`/lib/systemd/system/`目录下(使用root用户拷贝，不然会没有权限)  
+        >su - root  
+        > cp /home/git/gogs/scripts/systemd/gogs.service /lib/systemd/system/  
+
+        ![git_023](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_023.jpg)  
+    2. 启动gogs服务，为gogs添加开机启动服务  
+        #启动gogs服务  
+        >systemctl start gogs  
+
+        #为gogs服务添加开机启动  
+        >systemctl enable gogs
+    3. 关闭防火墙(为了避免不能访问)  
+        #关闭防火墙  
+        >systemctl stop firewalld
+
+        #关闭防火墙开机启动  
+        >systemctl disable firewalld  
+
+        ![git_024](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_024.jpg)  
+
+* 8.首次登陆
+    1. 首次登陆地址位：gogs搭建的主机地址的3000端口上。http://172.0.0.1/3000/install  
+        ![git_025](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_025.jpg)  
+    2. 设置基本信息
+        ![git_026](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_026.jpg)  
+    3. 设置可选信息
+        ![git_027](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_027.jpg)  
+    10 设置成功后正常登录后如下：(注意：上面设置中，如果不清楚的情况下，端口最好设置为3000,ip地址使用安装机器的ip地址，不要使用localhost)
+        ![git_030](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_030.jpg)  
+
+* 9.可能出现的错误
+    1. 数据库设置错误：Error 1071
+        ![git_028](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_028.jpg)  
+        解决办法：参考：[https://blog.csdn.net/z404739140/article/details/83384830](https://blog.csdn.net/z404739140/article/details/83384830)
+    2. 使用root用户登录mysql,查看innodb_large_prefix状态：如果是off，就修改为on
+        >mysql -uroot -p  
+        >show variables like '%innodb_large_prefix%';  
+        >set global innodb_large_prefix=on;  
+        >show variables like '%innodb_file_format%';  
+        >set global innodb_file_format=Barracuda;  
+        >flush privileges;  
+
+        ![git_029](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_029.jpg)  
+    3. 修改数据库配置文件：`/etc/my.cnf`,增加如下内容：
+
+        ````text
+        innodb_large_prefix=on
+        innodb_file_format=Barracuda
+        innodb_file_format_check=ON
+        innodb_file_format_max=Barracuda
+        innodb_file_per_table=ON
+        ````
+
+        ![git_031](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_031.jpg)  
+
+    4. 如果依然出现上述错误可以重新执行如下命令(重新创建gogs数据库，和重新为gogs用户给权限)
+        >mysql -uroot -p < /home/git/gogs/scripts/mysql.sql  
+        >mysql -u root -p  
+        >grant all on gogs.* to 'gogs'@'%' identified by 'gogs';  
+        >flush privileges;
+        >exit;
+
+## 在gogs中创建仓库
+
+1. 用已经注册的用户登录(不建议使用root用户登录，可以先注册个用户)
+    ![git_032](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_032.jpg)  
+2. 点击添加个厂库
+    ![git_033](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_033.jpg)  
+3. 填写厂库名称，点击创建厂库
+    ![git_034](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_034.jpg)  
+4. 下面就可以看到和github类似的界面，厂库已经创建完成。
+    ![git_035](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_035.jpg)  
+
+## gogs问题解决
+
+1. 打开网页慢
+    日志中可以看到 AvatarLink.LibravatarService.FromEmail [my@magedu.com]: lookup _avatarssec._tcp.magedu.com on 192.168.142.2:53: read udp 92.168.142.135:40255->192.168.142.2:53: i/o timeout  
+    访问不到gravatar.com的头像服务，解决办法就是禁用gravatar服务，使用本地头像 
+    打开配置文件，修改如下  
+    ![git_036](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/app/git_036.jpg)  
+    重新加载配置即  
+    也可以在访问install的时候，就禁用Gravatar服务  
