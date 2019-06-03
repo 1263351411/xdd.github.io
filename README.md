@@ -65,7 +65,8 @@
     10. [类中属性和方法大全](Python/python高级知识/1.高级语法知识/10.类中属性和方法大全.md)
     11. [内存统计与slots及Python的对象模型](Python/python高级知识/1.高级语法知识/11.内存统计与slots及Python的对象模型.md)  
     12. [模块化](Python/python高级知识/1.高级语法知识/12.模块化.md)  
-    13. [包](Python/python高级知识/1.高级语法知识/13.包.md)  
+    13. [打包分发](Python/python高级知识/1.高级语法知识/13.打包分发.md)  
+    14. [插件化开发](Python/python高级知识/1.高级语法知识/14.插件化开发.md)  
 
 * 2.高级模块使用
     1. [缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
@@ -110,10 +111,18 @@
 7. [20190515类的练习](Python/python作业/20190515类的练习.md)
 8. [20190520类的练习](Python/python作业/20190520类的练习.md)
 
+# SQL数据库操作
+
+1. [SQL命令](SQL数据库操作/SQL命令.md)
+
 # java
 
 ## java基础知识  
 
 ## java高级知识
 
-1. [装饰模式](Python/java/java高级知识/装饰模式.md)
+1. [装饰模式](Python/java/java高级知识/装饰模式.md)  
+
+# 软件安装
+
+1. [Gogs服务搭建](软件安装/1.Gogs服务搭建.md)
