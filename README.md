@@ -3,9 +3,9 @@
 1. [十六进制与八进制对应二进制的规律](个人总结/十六进制与八进制对应二进制的规律.md)  
 2. [二进制的运算与方法中参数设计的技巧](个人总结/二进制的运算与方法中参数设计的技巧.md)  
 
-# Python
+# 1、Python
 
-## python基础知识
+## 1.1、python基础知识
 
 * 1.线性数据结构
     1. [str字符串](Python/python基础知识/1.线性数据结构/1.str字符串.md)
@@ -50,7 +50,7 @@
     4. [PEP-Python规范](Python/python基础知识/其他/4.PEP-Python规范.md)
     * [python重点注意地方](Python/python基础知识/其他/python重点注意地方.md)
 
-## Python高级知识
+## 1.2、Python高级知识
 
 * 1.高级语法知识
     1. [面向对象](Python/python高级知识/1.高级语法知识/1.面向对象.md)  
@@ -67,27 +67,41 @@
     12. [模块化](Python/python高级知识/1.高级语法知识/12.模块化.md)  
     13. [打包分发](Python/python高级知识/1.高级语法知识/13.打包分发.md)  
     14. [插件化开发](Python/python高级知识/1.高级语法知识/14.插件化开发.md)  
-
 * 2.高级模块使用
     1. [缓冲与缓存(buffer与cache)](Python/python高级知识/2.高级模块使用/1.缓冲与缓存(buffer与cache).md)
     2. [argparse命令行解析模块](Python/python高级知识/2.高级模块使用/2.argparse命令行解析模块.md)
     3. [正则表达式](Python/python高级知识/2.高级模块使用/3.正则表达式.md)
     4. [Python中的re模块正则](Python/python高级知识/2.高级模块使用/4.Python中的re模块正则.md)
     5. [二分法与bisect模块](Python/python高级知识/2.高级模块使用/5.二分法与bisect模块.md)
+    6. [logging日志输出模块](Python/python高级知识/2.高级模块使用/6.logging日志输出模块.md)
+* 3.线程和进程
+    1. [并发和线程](Python/python高级知识/3.线程和进程/1.并发和线程.md)  
+    2. [threading线程对象](Python/python高级知识/3.线程和进程/2.threading线程对象.md)  
+    3. [线程同步与线程锁](Python/python高级知识/3.线程和进程/3.线程同步与线程锁.md)  
+    4. [GIL全局解释器锁](Python/python高级知识/3.线程和进程/4.GIL全局解释器锁.md)  
+    5. [进程multiprocessing模块](Python/python高级知识/3.线程和进程/5.进程multiprocessing模块.md)  
+    6. [多进程与进程池](Python/python高级知识/3.线程和进程/6.多进程与进程池.md)  
+    7. [concurrent并发包(构建线程池和进程池)](Python/python高级知识/3.线程和进程/7.concurrent并发包(构建线程池和进程池).md)  
 
-## 数据结构思想
+## 1.3、数据结构思想
 
 1. [树的概念和基础性质](Python/数据结构思想/1.树的概念和基础性质.md)
 2. [图](Python/数据结构思想/2.图.md)
 
-## 经典算法
+## 1.4、经典算法
 
 1. [汉诺塔问题](Python/经典算法/1.汉诺塔问题.md)
 2. [十大排序算法](Python/经典算法/2.十大排序算法.md)
 3. [base64编码和解码](Python/经典算法/3.base64编码和解码.md)  
-4. [求最长公共子串](Python/经典算法/4.求最长公共子串.md)
+4. [求最长公共子串](Python/经典算法/4.求最长公共子串.md)  
 
-## 项目实战
+## 1.5、软件安装与使用
+
+1. [Gogs服务搭建](Python/软件安装与使用/1.Gogs服务搭建.md)  
+2. [git的使用](Python/软件安装与使用/2.git的使用.md)  
+3. [Pycharm中使用Git](Python/软件安装与使用/3.Pycharm中使用Git.md)  
+
+## 1.6、项目实战
 
 ### 1.日志分析
 
@@ -100,7 +114,7 @@
 
 1. [模拟购物车购物](Python/项目实战/2.模拟购物车购物/模拟购物车购物.md)
 
-## python作业
+## 1.7、python作业
 
 1. [基础练习1](Python/python作业/基础练习1.md)
 2. [基础练习2](Python/python作业/基础练习2.md)
@@ -111,18 +125,14 @@
 7. [20190515类的练习](Python/python作业/20190515类的练习.md)
 8. [20190520类的练习](Python/python作业/20190520类的练习.md)
 
-# SQL数据库操作
+# 2、SQL数据库操作
 
 1. [SQL命令](SQL数据库操作/SQL命令.md)
 
-# java
+# 3、java
 
-## java基础知识  
+## 3.1、java基础知识  
 
-## java高级知识
+## 3.2、java高级知识
 
 1. [装饰模式](Python/java/java高级知识/装饰模式.md)  
-
-# 软件安装
-
-1. [Gogs服务搭建](软件安装/1.Gogs服务搭建.md)
