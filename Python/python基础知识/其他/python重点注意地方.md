@@ -1,11 +1,15 @@
 # Python重点注意地方
-### 例子1： 运算符号+=
+
+## 例子1： 运算符号+=
+
 * 特殊注意，可变引用类型的+=：
+
 ````python
 a = [1]
 b = [2]
 a += b  #等价于a.extend(b)
 ````
+
 ````python
 def x(a=[],b="ab",c={3,5},d=(1,)):
     a += [5]  # 注意 a += [5] 等价于 a.extend([5])
@@ -17,9 +21,11 @@ x()
 x()
 print(x.__defaults__)
 ````  
+
 ![fun003](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/fun003.jpg) 
 
-### 例子2：切片赋值
+## 例子2：切片赋值
+
 ````python
 arr = [1,2,3,4,5,6,7,8,9,10] #定义一个列表
 print("arr = {} \t id = {}".format(arr,id(arr)))
@@ -27,10 +33,13 @@ print("arr = {} \t id = {}".format(arr,id(arr)))
 arr[1:9:2] = ["a","b","c","d"]  #会将arr中 2,4,6,8 删除。并在对应位置替换成a,b,c,d
 print("arr = {} \t id = {}".format(arr,id(arr)))
 ````  
+
 ![slice11](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/slice11.jpg)  
 
-### 例子3： 生成器表达式中的闭包
+## 例子3： 生成器表达式中的闭包
+
 * 例子:1
+
 ````python
 def getcont():
     key = 5
@@ -41,9 +50,11 @@ hh = getcont()  ## 注意此时生成器中key对应的值变成100，形成闭�
 key = 120 #此时key与hh中生成器的key不同
 list(hh)
 ````  
+
 ![yield005](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/yield005.jpg)  
 
 * 例子2：  
+
 ````python
 def add(n,i):
     return n+i
@@ -58,4 +69,5 @@ for n in [1,10]:
 #     g = (add(n,i) for i in (add(n,i) for i in g) )
 print(list(g))
 ````
+
 ![yield004](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/yield004.jpg)  
