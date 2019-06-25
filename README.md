@@ -120,9 +120,13 @@
     * [urlparse对象URL分析器](Python/项目实战/1.日志分析/urlparse对象URL分析器.md)
     * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)  
 
-### 1.6.2、 模拟购物车购物
+### 1.6.2、模拟购物车购物
 
 1. [模拟购物车购物](Python/项目实战/2.模拟购物车购物/模拟购物车购物.md)
+
+### 1.6.3、其他
+
+1. [Numpy向量化运算](Python/项目实战/其他/1.Numpy向量化运算.md)
 
 ## 1.7、python作业
 
