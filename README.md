@@ -12,7 +12,7 @@
     2. [bytes与bytearray](Python/python基础知识/1.线性数据结构/2.bytes与bytearray.md)  
     3. [tuple元组,namedtuple命名元组](Python/python基础知识/1.线性数据结构/3.tuple元组,namedtuple命名元组.md)
     4. [list列表](Python/python基础知识/1.线性数据结构/4.list列表.md)
-* 2.非线性数据结构 
+* 2.非线性数据结构
     1. [set和集合运算](Python/python基础知识/2.非线性数据结构/1.set和集合运算.md)  
     2. [dict字典，缺省值字典(Python/defaultdict)，有序字典(Python/OrdereedDict)](Python/python基础知识/2.非线性数据结构/2.dict字典.md)  
 * 3.基础语法知识
@@ -87,11 +87,16 @@
     2. [TCP编程与Socket](Python/python高级知识/4.网络编程/2.TCP编程与Socket.md)
     3. [UDP编程与Socket](Python/python高级知识/4.网络编程/3.UDP编程与Socket.md)
     4. [SocketServer模块](Python/python高级知识/4.网络编程/4.SocketServer模块.md)
+    5. [边沿触发和电平触发的区别](Python/python高级知识/4.网络编程/5.边沿触发和电平触发的区别.md)
+    6. [同步异步与操作系统](Python/python高级知识/4.网络编程/6.同步异步与操作系统.md)
+    7. [IO多路复用](Python/python高级知识/4.网络编程/7.IO多路复用.md)
+    8. [asyncio协程](Python/python高级知识/4.网络编程/8.asyncio协程.md)
 
 ## 1.3、数据结构思想
 
 1. [树的概念和基础性质](Python/数据结构思想/1.树的概念和基础性质.md)
 2. [图](Python/数据结构思想/2.图.md)
+3. [网](Python/数据结构思想/2.网.md)
 
 ## 1.4、经典算法
 
@@ -108,14 +113,14 @@
 
 ## 1.6、项目实战
 
-### 1.日志分析
+### 1.6.1、日志分析
 
 1. [日志分析](Python/项目实战/1.日志分析/1.日志分析.md)
     * [queue模块--队列](Python/项目实战/1.日志分析/queue模块--队列.md)
     * [urlparse对象URL分析器](Python/项目实战/1.日志分析/urlparse对象URL分析器.md)
     * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)  
 
-### 2. 模拟购物车购物
+### 1.6.2、 模拟购物车购物
 
 1. [模拟购物车购物](Python/项目实战/2.模拟购物车购物/模拟购物车购物.md)
 
@@ -129,10 +134,12 @@
 6. [作业20190429](Python/python作业/作业20190429.md)
 7. [20190515类的练习](Python/python作业/20190515类的练习.md)
 8. [20190520类的练习](Python/python作业/20190520类的练习.md)
+9. [20190604第二次月考](Python/python作业/20190604第二次月考.md)
 
 # 2、SQL数据库操作
 
-1. [SQL命令](SQL数据库操作/SQL命令.md)
+1. [数据库简介](SQL数据库操作/1.数据库简介.md)
+2. [关系模型和SQL](SQL数据库操作/2.关系模型和SQL.md)
 
 # 3、java
 
