@@ -183,7 +183,7 @@ finally:
         cursor.close()
 ````
 
-![pymysql_001](../../../img/python/pymysql_001.jpg)
+![pymysql_001](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/pymysql_001.jpg)
 
 ### 带列名查询
 
@@ -232,7 +232,7 @@ finally:
         cursor.close()
 ````
 
-![pymysql_002](../../../img/python/pymysql_002.jpg)
+![pymysql_002](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/pymysql_002.jpg)
 
 ### SQL注入攻击
 
@@ -277,7 +277,7 @@ finally:
         cursor.close()
 ````
 
-![pymysql_003](../../../img/python/pymysql_003.jpg)
+![pymysql_003](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/pymysql_003.jpg)
 
 * **参数化查询提高效率的原因：**
     1. **SQL语句缓存**：数据库服务器一般会对SQL语句编译和缓存，编译只对SQL语句部分，所以参数中就算有SQL指令也不会被当做指令执行。
@@ -317,17 +317,67 @@ finally:
         cursor.close()
 ````
 
-![pymysql_004](../../../img/python/pymysql_004.jpg)
+![pymysql_004](https://raw.githubusercontent.com/1263351411/xdd.github.io/master/img/python/pymysql_004.jpg)
 
 ### 上下文支持
 
 * 查看链接类和游标类的源码
 
 ````python
+# 链接对象类
+class Connection(object):
+    def __enter__(self):
+        """Context manager that returns a Cursor"""
+        warnings.warn(
+            "Context manager API of Connection object is deprecated; Use conn.begin()",
+            DeprecationWarning)
+        return self.cursor()
 
+    def __exit__(self, exc, value, traceback):
+        """On successful exit, commit. On exception, rollback"""
+        if exc:
+            self.rollback()
+        else:
+            self.commit()
+
+#游标类
+class Cursor(object):
+    def __enter__(self):
+    return self
+
+    def __exit__(self, *exc_info):
+        del exc_info
+        self.close()
 ````
 
+* 链接类进入上下文的时候会返回一个游标对象，退出时如果没有异常会提交更改。
+* 游标类也使用上下文，在退出时关闭游标对象。
+* conn的with进入是返回一个新的cursor对象，退出时，只是提交或者回滚了事务。并没有关闭cursor和conn。不关闭cursor就可以接着用，防止多次构建链接对象。
 
+* 简单示例：
+
+````python
+import pymysql
+
+ip = "127.0.0.1"
+username = "xdd"
+password = "xdd"
+database = "xdd"
+port = 3306
+#创建连接对象
+conn = pymysql.connect(ip,username,password,database,port = port)
+try:
+    with conn as cursor:
+        with cursor as cur:
+            sql = "select * from student"
+            cursor.execute(sql)
+            print(cursor.fetchall())
+finally:
+    if conn:
+        conn.close()
+````
+
+* 通过上面的实验，我们知道，链接 应该不需要反反复复创建销毁，应该是过个cursor共享一个conn。
 
 
 
