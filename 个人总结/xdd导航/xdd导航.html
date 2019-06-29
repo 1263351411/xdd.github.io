@@ -78,11 +78,23 @@
     }
 </style>
 <script type="text/javascript">
-    function xdd_baidu(a) {
+    function xdd_baidu(a,b) {
         // a = document.getElementById("id_inputbaidu").value;
-        url = "https://www.baidu.com/s?tn=50000021_hao_pg&" +
-            "ie=utf-8&sc=UWd1pgw-pA7EnHc1FMfqnHRdP1nzn1mLrHmzPauW5y99U1Dznzu9m1YYrHcsn1RLPjb&ssl_sample=s_102&srcqid=3093107475549385291&H123Tmp=nunew7" +
-            "&word=" + a;
+        switch (b){
+            case 0:
+                // bing国内版
+                url = "https://cn.bing.com/search?q="+a;
+                break;
+            case -1:
+                // bing 国际版
+                url = "https://cn.bing.com/search?q="+a+"&ensearch=1";
+                break;
+            case 1: //百度搜索
+                url = "https://www.baidu.com/s?tn=50000021_hao_pg&" +
+                "ie=utf-8&sc=UWd1pgw-pA7EnHc1FMfqnHRdP1nzn1mLrHmzPauW5y99U1Dznzu9m1YYrHcsn1RLPjb&ssl_sample=s_102&srcqid=3093107475549385291&H123Tmp=nunew7" +
+                "&word=" + a;
+                break;
+        }
         window.open(url);
     }
 
@@ -90,7 +102,7 @@
         var evt = window.event ? window.event : event;
         switch (evt.keyCode) {
             case 13: //按下的是回车键
-                xdd_baidu(event.value)
+                xdd_baidu(event.value,0)
                 break;
         }
     }
@@ -106,7 +118,9 @@
 <div id="id_big">
         <div class="one_div one_sousuo">
             <input type="text" id="id_inputbaidu" onkeydown="xdd_baidu_sousuo(this)">
-            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value)" value="百度一下" />
+            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,0)" value="bing国内" />
+            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,-1)" value="bing国际" />
+            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,1)" value="百度一下" />
         </div>
         <div>
             <h3>搜索</h3>
@@ -169,21 +183,17 @@
             </div>
         </div>
         <div>
-            <h3>软件使用</h3>
+            <h3>常用帮助文档</h3>
             <div class="one_div">
+                <a href="https://docs.python.org/zh-cn/3/">Python3.7.3</a>
+                <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide">JavaScript开发帮助文档</a>
+                <a href="https://www.runoob.com/mongodb/mongodb-tutorial.html">Mongodb帮助文档</a>
+                <a href="https://developers.weixin.qq.com/miniprogram/dev/api/">小程序api</a>
                 <a href="http://alfred-sun.github.io/markdown-syntax-zhtw/">Markdown中文文档</a>
                 <a href="http://www.android-doc.com/">Android中文帮助文档</a>
                 <a href="https://api.highcharts.com.cn/highcharts">highcharts图表制作帮助文档</a>
                 <a href="http://tool.oschina.net/apidocs">各类文档</a>
                 <a href="https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424">Git的使用</a>
-            </div>
-        </div>
-        <div>
-            <h3>常用帮助文档</h3>
-            <div class="one_div">
-                <a href="https://docs.python.org/zh-cn/3/">Python3.7.3</a>
-                <a href="https://www.runoob.com/mongodb/mongodb-tutorial.html">Mongodb帮助文档</a>
-                <a href="https://developers.weixin.qq.com/miniprogram/dev/api/">小程序api</a>
             </div>
 
         </div>
