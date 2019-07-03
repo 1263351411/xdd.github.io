@@ -153,13 +153,13 @@
 
 ## 基本语法
 
-1. [前端技术发展史](javascript/基本语法/1.前端技术发展史.md)
-2. [开发环境准备](javascript/基本语法/2.开发环境准备.md)
-3. [数据类型与运算符](javascript/基本语法/3.数据类型与运算符.md)
-4. [string与number](javascript/基本语法/4.string与number.md)
-5. [控制语句if,for...](javascript/基本语法/5.控制语句if,for....md)
-6. [函数作用域和异常处理](javascript/基本语法/6.函数作用域和异常处理.md)
-7. [生成器函数](javascript/基本语法/7.生成器函数.md)
+1. [前端技术发展史](javascript/基础知识/1.前端技术发展史.md)
+2. [开发环境准备](javascript/基础知识/2.开发环境准备.md)
+3. [数据类型与运算符](javascript/基础知识/3.数据类型与运算符.md)
+4. [string与number](javascript/基础知识/4.string与number.md)
+5. [控制语句if,for...](javascript/基础知识/5.控制语句if,for....md)
+6. [函数作用域和异常处理](javascript/基础知识/6.函数作用域和异常处理.md)
+7. [生成器函数](javascript/基础知识/7.生成器函数.md)
 
 ## 其他
 
