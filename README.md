@@ -151,7 +151,7 @@
 
 # 3、JavaScript
 
-## 基本语法
+## 基础知识
 
 1. [前端技术发展史](javascript/基础知识/1.前端技术发展史.md)
 2. [开发环境准备](javascript/基础知识/2.开发环境准备.md)
@@ -160,6 +160,13 @@
 5. [控制语句if,for...](javascript/基础知识/5.控制语句if,for....md)
 6. [函数作用域和异常处理](javascript/基础知识/6.函数作用域和异常处理.md)
 7. [生成器函数](javascript/基础知识/7.生成器函数.md)
+
+## 高级知识
+
+1. [对象模型](javascript/高级知识/1.对象模型.md)
+2. [解构及数组对象操作](javascript/高级知识/2.解构及数组对象操作.md)
+3. [Promise与流程控制和异步](javascript/高级知识/3.Promise与流程控制和异步.md)
+4. [模块化](javascript/高级知识/4.模块化.md)
 
 ## 其他
 
