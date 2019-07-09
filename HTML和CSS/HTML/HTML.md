@@ -104,8 +104,64 @@
 7. **表单**
 
     ````html
-
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>xdd html</title>
+        <script src="jquery.min.js"></script>
+        <style>
+            td {padding: 5px;}
+        </style>
+    </head>
+    <body>
+        <form action="" method="POST" enctype="application/x-www-form-urlencoded">
+            <table border="1" style="border-collapse: collapse">
+                <tr>
+                    <td colspan="2">用户注册</td>
+                </tr>
+                <tr>
+                    <td>用户名</td>
+                    <td><input type="text" placeholder="用户名"></td>
+                </tr>
+                <tr>
+                    <td>密码</td>
+                    <td><input type="password" name="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>
+                        <input type="radio" name="gender" id = "gender" checked value="M" >男
+                        <input type="radio" name="gender" id = "gender" value="F"> 女
+                    </td>
+                </tr>
+                <tr>
+                    <td>爱好</td>
+                    <td>
+                        <input type="checkbox" name="interest" id="interest" value="music" >音乐
+                        <input type="checkbox" name="interest" id="interest" checked value="movie">电影
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="提交">
+                        <input type="reset" value="重置">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+    </html>
     ````
+
+    * **特别注意**：表单控件如果要提交数据，**必须使用name属性**，否则不能提交到服务端。
+    * form标签的重要性
+        1. action,表单数据submit提交到哪里
+        2. method,提交方法，常用POST。
+        3. enctype,对提交的数据编码
+            * application/x-www-form-urlencoded,发送钱编码所有字符(默认)
+            * multipart/form-data,不对字符编码。在使用包含文件上传控件的表单时，必须使用该值。
+            * text/plain,空格转换为"+"加号，但不对特殊字符编码
 
 
 
