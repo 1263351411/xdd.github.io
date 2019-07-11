@@ -154,7 +154,7 @@ a {
 E[attr]{sRules}|具有某属性
 E[attr=value]{sRules}|具有某属性且等于value
 E[attr ~= value]{sRules}|具有某属性且属性值中的一个是value
-E[attr |= value]{sRules}|具有某属性且属性值使用了`-`，且`-`之前的部分是value的才匹配<br/>`*[class|="main"]`能和`<div class='main-center'>`减号之前的部分匹配
+E[attr \|= value]{sRules}|具有某属性且属性值使用了`-`，且`-`之前的部分是value的才匹配<br/>`*[class|="main"]`能和`<div class='main-center'>`减号之前的部分匹配
 
 ````css
 /*链接具有href属性*/
