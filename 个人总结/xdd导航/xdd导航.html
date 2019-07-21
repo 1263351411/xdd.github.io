@@ -6,14 +6,6 @@
 <title>xdd导航</title>
 <base target="_blank" />
 <style type="text/css">
-    .one_div {
-        padding-left: 20px;
-    }
-    
-    .one_sousuo {
-        margin-top: 50px;
-        margin-left: 300px;
-    }
     body {
         font:14px/180% Arial, Helvetica, sans-serif, "华文新魏";
     }
@@ -49,7 +41,7 @@
         -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
         transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
     }
-    input:focus{
+    input:focus,.sousou:hover{
         border-color: #66afe9;
         outline: 0;
         -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
@@ -61,7 +53,9 @@
     
     #id_big {
         /* border: 1px solid red; */
-        margin-left: 300px;
+        /* margin-left: 300px; */
+        /* position: absolute; */
+        margin-left: 15%
     }
     
     #id_inputbaidu {
@@ -71,7 +65,15 @@
         background:  rgba(240, 202, 202, 0.28)
     }
     
-    #id_sousuo {
+    .one_div {
+        padding-left: 20px;
+    }
+    
+    .one_sousuo {
+        margin-top: 50px;
+        margin-left: 180px;
+    }
+    .sousou {
         width: 120px;
         height: 40px;
         background:  rgba(240, 202, 202, 0.28)
@@ -80,6 +82,7 @@
 <script type="text/javascript">
     function xdd_baidu(a,b) {
         // a = document.getElementById("id_inputbaidu").value;
+        let url = "";
         switch (b){
             case 0:
                 // bing国内版
@@ -93,6 +96,9 @@
                 url = "https://www.baidu.com/s?tn=50000021_hao_pg&" +
                 "ie=utf-8&sc=UWd1pgw-pA7EnHc1FMfqnHRdP1nzn1mLrHmzPauW5y99U1Dznzu9m1YYrHcsn1RLPjb&ssl_sample=s_102&srcqid=3093107475549385291&H123Tmp=nunew7" +
                 "&word=" + a;
+                break;
+            case 2://Google搜索
+                url = "https://www.google.com/search?q="+a;
                 break;
         }
         window.open(url);
@@ -115,12 +121,13 @@
 
 </style>
 <div style="z-index: 6; position:absolute;">
-<div id="id_big">
-        <div class="one_div one_sousuo">
+<div id="id_big" >
+        <div class="one_div one_sousuo" style="width: 1200px;">
             <input type="text" id="id_inputbaidu" onkeydown="xdd_baidu_sousuo(this)">
-            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,0)" value="bing国内" />
-            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,-1)" value="bing国际" />
-            <input type="button" id="id_sousuo" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,1)" value="百度一下" />
+            <input type="button" class="sousou" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,0)" value="bing国内" />
+            <input type="button" class="sousou" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,-1)" value="bing国际" />
+            <input type="button" class="sousou" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,1)" value="百度一下" />
+            <input type="button" class="sousou" onclick="xdd_baidu(document.getElementById('id_inputbaidu').value,2)" value="Google" />
         </div>
         <div>
             <h3>搜索</h3>
