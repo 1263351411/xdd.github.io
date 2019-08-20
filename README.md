@@ -4,9 +4,11 @@
 2. [二进制的运算与方法中参数设计的技巧](个人总结/二进制的运算与方法中参数设计的技巧.md)  
 3. [Xdd导航](个人总结/xdd导航/xdd导航.html)
 
-# 1、Python
+[toc]
 
-## 1.1、python基础知识
+## 1、Python
+
+### 1.1、python基础知识
 
 * 1.线性数据结构
     1. [str字符串](Python/python基础知识/1.线性数据结构/1.str字符串.md)
@@ -51,7 +53,7 @@
     4. [PEP-Python规范](Python/python基础知识/其他/4.PEP-Python规范.md)
     * [python重点注意地方](Python/python基础知识/其他/python重点注意地方.md)
 
-## 1.2、Python高级知识
+### 1.2、Python高级知识
 
 * 1.高级语法知识
     1. [面向对象](Python/python高级知识/1.高级语法知识/1.面向对象.md)  
@@ -97,43 +99,64 @@
     2. [SQLAlchemy框架的使用](Python/python高级知识/5.数据库编程/2.SQLAlchemy框架的使用.md)
     3. [元编程](Python/python高级知识/5.数据库编程/3.元编程.md)
 
-## 1.3、数据结构思想
+### 1.3、数据结构思想
 
 1. [树的概念和基础性质](Python/数据结构思想/1.树的概念和基础性质.md)
 2. [图](Python/数据结构思想/2.图.md)
 3. [网](Python/数据结构思想/2.网.md)
 
-## 1.4、经典算法
+### 1.4、经典算法
 
-1. [汉诺塔问题](Python/经典算法/1.汉诺塔问题.md)
+1. [base64编码和解码](Python/经典算法/1.base64编码和解码.md)  
 2. [十大排序算法](Python/经典算法/2.十大排序算法.md)
-3. [base64编码和解码](Python/经典算法/3.base64编码和解码.md)  
-4. [求最长公共子串](Python/经典算法/4.求最长公共子串.md)  
 
-## 1.5、软件安装与使用
+#### 1.4.1 小练习
+
+1. [汉诺塔问题](Python/经典算法/小练习/1.汉诺塔问题.md)
+2. [对角线遍历数组](Python/经典算法/小练习/2.对角线遍历数组.md)
+3. [求最长公共子串](Python/经典算法/小练习/3.求最长公共子串.md)  
+4. [数组中的第k个最大元素](Python/经典算法/小练习/4.数组中的第k个最大元素.md)
+
+### 1.5、软件安装与使用
 
 1. [Gogs服务搭建](Python/软件安装与使用/1.Gogs服务搭建.md)  
 2. [git的使用](Python/软件安装与使用/2.git的使用.md)  
 3. [Pycharm中使用Git](Python/软件安装与使用/3.Pycharm中使用Git.md)  
 
-## 1.6、项目实战
+### 1.6、项目实战
 
-### 1.6.1、日志分析
+#### 1.6.1、日志分析
 
 1. [日志分析](Python/项目实战/1.日志分析/1.日志分析.md)
     * [queue模块--队列](Python/项目实战/1.日志分析/queue模块--队列.md)
     * [urlparse对象URL分析器](Python/项目实战/1.日志分析/urlparse对象URL分析器.md)
     * [user_agents中的parse对象](Python/项目实战/1.日志分析/user_agents中的parse对象.md)  
 
-### 1.6.2、模拟购物车购物
+#### 1.6.2、模拟购物车购物
 
-1. [模拟购物车购物](Python/项目实战/2.模拟购物车购物/模拟购物车购物.md)
+1. [模拟购物车购物](Python/项目实战/2.模拟购物车购物/模拟购物车购物.md)  
 
-### 1.6.3、其他
+#### 1.6.3、Django播客系统
+
+1. [WEB开发和WSGI](Python/项目实战/3.Django播客系统/1.WEB开发和WSGI.md)  
+2. [播客系统数据库模型设计](Python/项目实战/3.Django播客系统/2.播客系统数据库模型设计.md)  
+3. [Django项目构建和基础知识](Python/项目实战/3.Django播客系统/3.Django项目构建和基础知识.md)  
+5. [Restful_API设计最佳实战](Python/项目实战/3.Django播客系统/5.Restful_API设计最佳实战.md)  
+15. [Session](Python/项目实战/3.Django播客系统/15.Session.md)  
+16. [Celery调度+Redis安装](Python/项目实战/3.Django播客系统/16.Celery调度+Redis安装.md)  
+
+#### 1.6.4、爬虫
+
+1. [概述和HTTP请求与响应处理](Python/项目实战/4.爬虫/1.概述和HTTP请求与响应处理.md)  
+2. [HTML解析-Xpath](Python/项目实战/4.爬虫/2.HTML解析-Xpath.md)  
+3. [BeautifulSoup4和jsonpath](Python/项目实战/4.爬虫/3.BeautifulSoup4和jsonpath.md)  
+4. [RabbitMQ](Python/项目实战/4.爬虫/4.RabbitMQ.md)  
+
+#### 1.6.5、其他
 
 1. [Numpy向量化运算](Python/项目实战/其他/1.Numpy向量化运算.md)
 
-## 1.7、python作业
+### 1.7、python作业
 
 1. [基础练习1](Python/python作业/基础练习1.md)
 2. [基础练习2](Python/python作业/基础练习2.md)
@@ -145,14 +168,26 @@
 8. [20190520类的练习](Python/python作业/20190520类的练习.md)
 9. [20190604第二次月考](Python/python作业/20190604第二次月考.md)
 
-# 2、SQL数据库操作
+## 2、Python数据科学
 
-1. [数据库简介](SQL数据库操作/1.数据库简介.md)
-2. [关系模型和SQL](SQL数据库操作/2.关系模型和SQL.md)
+### 常用工具
 
-# 3、JavaScript
+1. [环境搭建](Python数据科学/常用工具/1.环境搭建.md)
+2. [可视化Matplotlib画图](Python数据科学/常用工具/2.可视化Matplotlib画图.md)
+3. [Numpy向量化编程](Python数据科学/常用工具/Numpy向量化编程.md)
 
-## 基础知识
+## 3、SQL数据库操作
+
+1. [数据库简介](SQL数据库操作/1.数据库简介.md)  
+2. [关系模型和SQL](SQL数据库操作/2.关系模型和SQL.md)  
+3. [Redis数据库安装](SQL数据库操作/3.Redis数据库安装.md)
+4. [Redis数据模型](SQL数据库操作/4.Redis数据模型.md)
+5. [Redis持久化和高可用](SQL数据库操作/5.Redis持久化和高可用.md)
+6. [MongoDB使用](SQL数据库操作/6.MongoDB使用.md)
+
+## 4、JavaScript
+
+### 基础知识
 
 1. [前端技术发展史](javascript/基础知识/1.前端技术发展史.md)
 2. [开发环境准备](javascript/基础知识/2.开发环境准备.md)
@@ -162,22 +197,28 @@
 6. [函数作用域和异常处理](javascript/基础知识/6.函数作用域和异常处理.md)
 7. [生成器函数](javascript/基础知识/7.生成器函数.md)
 
-## 高级知识
+### 高级知识
 
 1. [对象模型](javascript/高级知识/1.对象模型.md)
 2. [解构及数组对象操作](javascript/高级知识/2.解构及数组对象操作.md)
 3. [Promise与流程控制和异步](javascript/高级知识/3.Promise与流程控制和异步.md)
 4. [模块化](javascript/高级知识/4.模块化.md)
 
-## 其他
+### 框架
+
+1. [React项目构建](javascript/框架/1.React项目构建.md)  
+2. [React技术](javascript/框架/2.React技术.md)  
+3. [React之高阶组件](javascript/框架/3.React之高阶组件.md)  
+
+### 其他
 
 1. [Math与Date](javascript/其他/1.Math与Date.md)
 2. [RegExp正则表达式](javascript/其他/2.RegExp正则表达式.md)
 
-# 4、java
+## 5、java
 
-## 4.1、java基础知识  
+### 5.1、java基础知识  
 
-## 4.2、java高级知识
+### 5.2、java高级知识
 
 1. [装饰模式](java/java高级知识/装饰模式.md)  
