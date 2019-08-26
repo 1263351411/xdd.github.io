@@ -56,7 +56,7 @@
     6. ...等等
 
 * Docker的容器管理常用命令
-    ![docker_004](../../../img/python/docker_004.jpg)
+    ![docker_004](../img/docker_004.jpg)
 
 ## docker的安装
 
@@ -66,7 +66,7 @@
     3. Linux Kernel cgroups and namespaces
 * CentOS 7
     1. "Extras" repository 查看可以如下所示：
-    ![docker_005](../../../img/python/docker_005.jpg)  
+    ![docker_005](../img/docker_005.jpg)  
 * docker程序环境：
     1.环境配置文件：
         * `/etc/sysconfig/docker-network`
@@ -97,11 +97,11 @@
     `````
 
 * 使用iptables -vnL可以查看docker自动生成的规则
-![docker_001](../../../img/python/docker_001.jpg)  
+![docker_001](../img/docker_001.jpg)  
 
 * 修改`vim /usr/lib/systemd/system/docker.service`文件
     1. 添加`ExecStartPost=/usr/sbin/iptables -P FORWARD ACCEPT`
-    ![docker_002](../../../img/python/docker_002.jpg)  
+    ![docker_002](../img/docker_002.jpg)  
     2. 修改完成后需要重新执行如下命令
 
         ````shell
@@ -110,14 +110,14 @@
         ````
 
     3. 再次使用`iptables -vnL`查看可以看到FORWARD已经修改为ACCEPT
-    ![docker_003](../../../img/python/docker_003.jpg)  
+    ![docker_003](../img/docker_003.jpg)  
 
 ## docker的使用
 
 1. 常用操作：
     * `docker search:`搜索镜像Search the Docker Hub for images
         1. `docker search nginx` #搜索nginx镜像
-            ![docker_006](../../../img/python/docker_006.jpg)  
+            ![docker_006](../img/docker_006.jpg)  
     * `docker pull` 下载镜像Pull an image or a repository from a registry
     * `docker images` 查看镜像List images
     * `docker create` 创建容器Create a new container
@@ -303,13 +303,13 @@
         * **rootfs**:位于bootfs之上，表现为docker容器的根文件系统；
             1. 传统模式中，系统启动之时，内核挂载rootfs时会首先将其挂载为“只读”模式，完整性自检完成后将其重新挂载为读写模式;
             2. docker中，rootfs由内核挂载为“只读”模式，而后通过“联合挂载”技术额外挂载一个“可写”层；
-        ![docker_007](../../../img/python/docker_007.jpg)  
+        ![docker_007](../img/docker_007.jpg)  
 
 * **Docker Image Layer**(docker的镜像层级)
 
 1. 位于下层的镜像称为父镜像(parent image),最底层的称为基础镜像(base image)
 2. 最上层为"可读写"层，其下的均为"只读"层
-    ![docker_008](../../../img/python/docker_008.jpg)  
+    ![docker_008](../img/docker_008.jpg)  
 
 * **Aufs**高级多层统一文件系统
 
@@ -324,7 +324,7 @@
 * **Docker Registry**镜像的统一存储位置Registry
 
 1. 启动容器时，docker daemon会 试图从本地获取相关的镜像；本地 镜像不存在时，将其从Registry中下载该镜像并保存到本地；
-    ![docker_009](../../../img/python/docker_009.jpg)  
+    ![docker_009](../img/docker_009.jpg)  
 2. Docker Registry分类
     * Registry用于保存docker镜像，包括镜像的层次结构和元数据
     * 用户可自建 Registry，也可使用官方的Docker Hub
@@ -345,7 +345,7 @@
         2. 相当于为Registry提供另一个完成用户认证等功能的检索接口
 4. Docker Registry
     * Docker Registry中的镜像通常有开发人员制作，而后推送至“公共”或“私有”Registry上保存，供其他人员使用，例如：“部署”到生产环境；
-    ![docker_010](../../../img/python/docker_010.jpg)  
+    ![docker_010](../img/docker_010.jpg)  
 
 * **常用的镜像厂库**
     1. [https://hub.docker.com/](https://hub.docker.com/)
@@ -358,7 +358,7 @@
     1. Dockerfile
     2. 基于容器制作
     3. Docker Hub automated builds
-    ![docker_011](../../../img/python/docker_011.jpg)  
+    ![docker_011](../img/docker_011.jpg)  
 
 #### 基于容器制作镜像
 
@@ -435,7 +435,7 @@ alpine              3.8                 dac705114996        5 months ago        
 1. 先登录`docker login -u 1263351411`输入用户名和密码，会显示连接成功
 2. 制作镜像：`docker commit -a "xdd <xdd@xdd.com>" -c 'CMD ["/bin/httpd","-f","-h","/data/html"]' -p xddbox2 1263351411/xdd:latest`
     * 注意：本地创库名称一定要和远程仓库名称一致
-    ![docker_012](../../../img/python/docker_012.jpg)  
+    ![docker_012](../img/docker_012.jpg)  
 3. 推送仓库到远程仓库`docker push 1263351411/xdd`
 
 ````text
@@ -502,10 +502,10 @@ latest: digest: sha256:9d3fdb0a087e4c45d16734fa8c6d180d9d7e0171d70c55c3759b7c243
     2. `Bridged container`桥接网络模型
     3. `Joined container` 联盟式网络(相当于两个容器之间共享网络，即两台主机共享同一个网卡等。)
     4. `Open container`开放式网络(通常开发的是物理网卡的网络接口，相当于共享宿主机网络)
-    ![docker_013](../../../img/python/docker_013.jpg)  
+    ![docker_013](../img/docker_013.jpg)  
 
 * `docker network inspect bridge`#查看bridge网络的配置信息
-    ![docker_014](../../../img/python/docker_014.jpg)  
+    ![docker_014](../img/docker_014.jpg)  
 
 * 使用ip命令模拟名称空间之间的通信
     1. `ip netns add r2` #为宿主机添加一个网络名称空间为r2
@@ -566,8 +566,8 @@ latest: digest: sha256:9d3fdb0a087e4c45d16734fa8c6d180d9d7e0171d70c55c3759b7c243
         * 注意：如果宿主机上有多个ip地址，默认是映射到所有ip地址上对应的这个端口上。即`0.0.0.0:port`
         * `docker inspect web1`可以查看容器详细信息
         * `iptables -t nat -vnl`可以查看网络映射地址和端口
-            ![docker_015](../../../img/python/docker_015.jpg)  
-            ![docker_016](../../../img/python/docker_016.jpg)  
+            ![docker_015](../img/docker_015.jpg)  
+            ![docker_016](../img/docker_016.jpg)  
         * `docker port web1`可以查看容器web1上映射的端口信息
     2. `docker run --name web1 --network bridge -p 192.168.61.109::80 --rm xdd/httpd:v0.2` 同上，在宿主机的端口映射为：`192.168.61.108:随机post <-- web1容器80端口`
     3. `docker run --name web1 --network bridge -p 80:80 --rm xdd/httpd:v0.2` 同上，端口映射为：`web1容器80 -->  0.0.0.0:80`
@@ -653,14 +653,14 @@ latest: digest: sha256:9d3fdb0a087e4c45d16734fa8c6d180d9d7e0171d70c55c3759b7c243
         * 修改完成后再其他主机上可以使用如下命令访问：
             1. `docker -H 192.168.61.108:8888 ps` #查看指定docker主机的容器信息。
         * 注意：如果重新启动出现如下错误：
-            ![docker_017](../../../img/python/docker_017.jpg)  
+            ![docker_017](../img/docker_017.jpg)  
             1. 解决办法：修改`/lib/systemd/system/docker.service`配置文件，将`ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock`中的`-H fd://`去掉即可
-            ![docker_018](../../../img/python/docker_018.jpg)  
+            ![docker_018](../img/docker_018.jpg)  
 
 3. 创建网络
     * `docker network create -d bridge --subnet "172.26.0.0/16" --gateway "172.26.0.1" mybr0` #创建一个mybr0的网络，网络模式为bridge桥接模式，子网络为`172.26.0.0/16`,网关为`172.26.0.1`
     * `docker run --name t1 --it --net mybr0 busybox:latest` # `--net是--network的简写`，从镜像busybox:latest中启动一个容器为t1,并加入mybr0网络
-    ![docker_019](../../../img/python/docker_019.jpg)  
+    ![docker_019](../img/docker_019.jpg)  
 
 ## docker存储卷
 
