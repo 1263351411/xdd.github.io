@@ -248,14 +248,21 @@
             * `docker run --name t1 -it --network bridge -h t1.xdd.com --dns 114.114.114.114 --dns-search ilinux.io --rm busybox:latest` #指定创建的容器dns-search搜索域为：ilinux.io
         10. `--add-host`添加指定的容器本地主机名解析
             * `docker run --name t1 -it --network bridge -h t1.xdd.com --dns 114.114.114.114 --dns-search ilinux.io --add-host www.xdd.com:1.1.1.1 --rm busybox:latest` #为新创建的主机添加www.xdd.com域名指定到1.1.1.1主机上
-        11 `-p，--publish-all`选项的使用格式(注意-p选项可以多次使用)
+        11. `-p，--publish-all`选项的使用格式(注意-p选项可以多次使用)
             * `-p <containerPort>` #将指定的容器端口映射至主机所有地址的一个动态端口
             * `-p <hostPort>:<containerPort>` #将容器端口`<containerPort>`映射到指定的主机端口`<hostPort>`
             * `-p <ip>::<containerPort>` #将指定的容器端口`<containerPort>`映射至主机指定`<ip>`的动态端口
             * `-p <ip>:<hostPort>:<containerPort>` #将指定的容器端口`<containerPort>`映射至主机指定的`<ip>`的端口`<hostPort>`
             1. "动态端口"指随机端口，具体的映射结果可使用docker port命令查看
+        12. `--volumes-from` 复制使用其他容器的卷
+            * `docker run -it --name bbox2 --volumes-from bbox1 busybox`#新启动的bbox2容器，复制使用bbox1中的卷配置地址。即bbox1和bbox2共享同一个卷的配置
+        13. `-e,--env` 设定环境变量值
+        14. `--entrypoint string` 覆盖镜像文件中使用entrypoint关键定义的命令
     6. `docker container port CONTAINER [PRIVATE_PORT[/PROTO]]`等价于`docker port ...`#查看指定容器上的端口映射
         * `docker port web1` #查看web1上的端口映射
+    7. `docker container inspect name` #查看指定容器的详细信息
+        * `-f 解析式` #使用json解析式查找指定属性值
+            * `docker container inspect -f {{.Mounts}} bbox1` #查找bbox1容器信息信息中的Mounts属性值
 * `docker image --help` #查看docker管理镜像的命令  
     1. `pull` #手动下载镜像
         * `docker image pull nginx:1.14-alpine`下载nginx镜像
@@ -290,7 +297,14 @@
     3. `inspect [OPTIONS] NETWORK [NETWORK...]` #查看网络详细信息
         * `docker network inspect none` #查看none网络详细信息
     4. `rm` #删除一个网络
-    
+
+* `docker build --help` 根据dockerfile文件制作镜像
+    1. 语法：`docker build [OPTIONS] PATH | URL | -`
+        * `PATH`:指定dockerfile文件所在的父目录
+        * `URL`:指定网络中的dockerfile的文件目录
+    2. 参数：
+        * `-t` 指定生成镜像的名称和tag
+            * `docker build -t tinyhttpd:v0.1-1 ./` 更具当前目录下的dockerfiel文件制作镜像`tinyhttpd:v0.1-1`
 
 * `docker exec --help`查看在容器中执行命令的帮助
     1. `docker exec -it kvstor1 /bin/sh`#在kvstor1容器中运行/bin/sh程序，并开启一个交互式界面
@@ -664,9 +678,55 @@ latest: digest: sha256:9d3fdb0a087e4c45d16734fa8c6d180d9d7e0171d70c55c3759b7c243
 
 ## docker存储卷
 
+* Docker镜像由多个只读层叠加而成，启动容器时，Docker会加载只读镜像层并在镜像栈顶部添加一个读写层
+* 如果运行中的容器修改了现有的一个已经存在的文件，那该文件将会从读写层下面的只读层复制到读写层，该文件的只读版本仍然存在，只是已经被读写层中该文件的副本所隐藏，此即“写时复制(COW)”机制
+![docker_020](../img/docker_020.jpg)  
 
-
-
+1. 容器的问题：
+    * 关闭并重启容器，其数据不受影响；但删除Docker容器，则其更改将会全部丢失
+    * 存在的问题：
+        1. 存储于联合文件系统中，不易于宿主机访问；
+        2. 容器间数据共享不便
+        3. 删除容器其数据会丢失
+    * 解决方案：“卷(volume)”
+        1. "卷"是容器上的一个或多个“目录”，此类目录可以绕过联合人就系统，与宿主机上的某个目录“绑定”（关联）
+        ![docker_021](../img/docker_021.jpg)  
+2. Data volumes数据卷
+    * 数据卷为持久数据或共享数据提供了几个有用的特性:
+        1. Volume于容器初始化之时即会创建，有base image提供的卷中的数据会于此期间完成复制
+        2. 数据卷可以在容器之间共享和重用
+        3. 对数据卷的更改是直接进行的
+        4. 更新映像时，不包括对数据卷的更改
+        5. 即使删除容器本身，数据卷也会保持
+    * Volume的初衷是独立于容器的生命周期实现数据持久化，因此删除容器之时即不会删除卷，也不会对哪怕未被引用的卷做垃圾回收操作；
+    * 卷为docker提供了独立于容器的数据管理机制
+        1. 可以把**镜像**想像成静态文件，例如“程序”，把卷类比为动态内容，例如“数据”；于是，镜像可以重用，而卷可以共享；
+        2. 卷实现了“程序(镜像)”和“数据(卷)”分离，以及“程序(镜像)”和"制作镜像的主机"分离，用户制作镜像时无须再考虑镜像运行的容器所在的主机的环境；
+        ![docker_022](../img/docker_022.jpg)  
+3. 卷的类型(Volume types)
+    * Docker有两种类型的卷，每种类型都在容器中存在一个挂载点，但其在宿主机上的位置有所不同；
+        1. Bind mount volume(绑定挂载卷)
+            * 指向主机文件系统上用户指定位置的卷
+        2. Docker-managed volume(docker管理的卷)
+            * Docker守护进程在主机文件系统中Docker拥有的一部分中创建托管卷(即：docker自己创建委托管理的卷)
+        ![docker_023](../img/docker_023.jpg)  
+4. 在容器中使用Volumes(卷)
+    * Docker-managed volume(docker自己托管的卷)创建方式
+        1. `docker run -it --name bbox1 -v /data busybox` #根据busybox创建一个容器，并挂载一个卷在容器中的`/data`目录下
+            * `docker run -it --name bbox1 -v /data busybox`#会在宿主机下`/var/lib/docker/volumes/自动生成的id/_data`目录下绑定容器的`/data`目录
+        2. `docker inspect -f {{.Mounts}} bbox1` #查看bbox1容器的卷、卷标识符及挂载的主机目录
+    * Bind-mount Volume(绑定挂载卷)的创建方式
+        1. `docker run -it -v HOSTDIR:VOLUMEDIR --name bbox2 busybox` #根据busybox镜像创建一个容器，将宿主机上的“HOSTDIR”目录挂载到容器中的“VOLUMEDIR”目录
+            * `docker run -it --name bbox1 -v /data/volumes/b2:/data --rm busybox` #指定宿主机`/data/volumes/b2`目录绑定容器的`/data`目录，注意：如果目录不存在会自动创建。
+        2. `docker inspect -f {{.Mounts}} bbox2` #查看bbox2容器的卷、标识符及挂载的主机目录。
+5. Sharing volumes(共享卷)
+    * 有两种方法可以在容器之间共享卷
+        1. 多个容器的卷使用同一主机目录，例如：
+            * `docker run -it --name c1 -v /docker/volumes/v1:/data busybox`
+            * `docker run -it --name c2 -v /docker/volumes/v1:/data busybox`
+        2. 复制使用其他容器的卷，为`docker run`命令使用`--volumes-from`选项
+            * `docker run -it --name bbox1 -v /docker/volumes/v1:/data busybox`
+            * `docker run -it --name bbox2 --volumes-from bbox1 busybox`
 
 
 
